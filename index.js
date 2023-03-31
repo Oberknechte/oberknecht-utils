@@ -2,6 +2,7 @@ require("./lib/utils/cleanChannelName");
 require("./lib/utils/correctChannelName");
 require("./lib/utils/correctMessage");
 require("./lib/utils/expectedEventName");
+require("./lib/utils/convertToArray");
 require("./lib/utils/message.Badges");
 require("./lib/utils/message.Command");
 require("./lib/utils/message.Content");
