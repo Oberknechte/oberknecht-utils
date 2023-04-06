@@ -1,6 +1,6 @@
 {
   "name": "oberknecht-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Utils for oberknecht packages",
   "main": "index.js",
   "scripts": {

@@ -12,6 +12,8 @@ require("./lib/utils/message.Parameters");
 require("./lib/utils/message.Prefix");
 require("./lib/utils/message.User");
 
+require("./lib/variables/regex");
+
 const oberknechtUtils = require("./lib/utils/index");
 
 module.exports = oberknechtUtils;
