@@ -12,6 +12,7 @@ require("./lib/utils/message.Parameters");
 require("./lib/utils/message.Prefix");
 require("./lib/utils/message.User");
 require("./lib/utils/recreate");
+require("./lib/utils/numberspacer");
 
 require("./lib/variables/regex");
 
