@@ -13,6 +13,8 @@ require("./lib/utils/message.Prefix");
 require("./lib/utils/message.User");
 require("./lib/utils/recreate");
 require("./lib/utils/numberspacer");
+require("./lib/utils/sleep");
+require("./lib/utils/firstCap");
 
 require("./lib/variables/regex");
 
