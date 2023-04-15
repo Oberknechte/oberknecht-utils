@@ -16,6 +16,8 @@ require("./lib/utils/numberspacer");
 require("./lib/utils/sleep");
 require("./lib/utils/firstCap");
 require("./lib/utils/joinUrlQuery");
+require("./lib/utils/chunkArray");
+require("./lib/utils/unchunkArray");
 
 require("./lib/variables/regex");
 
