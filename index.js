@@ -18,6 +18,8 @@ require("./lib/utils/firstCap");
 require("./lib/utils/joinUrlQuery");
 require("./lib/utils/chunkArray");
 require("./lib/utils/unchunkArray");
+require("./lib/utils/regexEscape");
+require("./lib/utils/ascii");
 
 require("./lib/variables/regex");
 
