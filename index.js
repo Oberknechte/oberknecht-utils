@@ -23,6 +23,8 @@ require("./lib/utils/ascii");
 require("./lib/utils/isNaM");
 require("./lib/utils/pad2");
 require("./lib/utils/cleanTime");
+require("./lib/utils/randomNum");
+require("./lib/utils/pickRandom");
 
 require("./lib/variables/regex");
 
