@@ -20,6 +20,9 @@ require("./lib/utils/chunkArray");
 require("./lib/utils/unchunkArray");
 require("./lib/utils/regexEscape");
 require("./lib/utils/ascii");
+require("./lib/utils/isNaM");
+require("./lib/utils/pad2");
+require("./lib/utils/cleanTime");
 
 require("./lib/variables/regex");
 
