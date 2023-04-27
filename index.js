@@ -25,6 +25,7 @@ require("./lib/utils/pad2");
 require("./lib/utils/cleanTime");
 require("./lib/utils/randomNum");
 require("./lib/utils/pickRandom");
+require("./lib/utils/returnOnNumber");
 
 require("./lib/variables/regex");
 
