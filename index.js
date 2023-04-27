@@ -26,6 +26,7 @@ require("./lib/utils/cleanTime");
 require("./lib/utils/randomNum");
 require("./lib/utils/pickRandom");
 require("./lib/utils/returnOnNumber");
+require("./lib/utils/isNullUndefined");
 
 require("./lib/variables/regex");
 
