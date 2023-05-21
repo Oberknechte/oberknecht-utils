@@ -27,6 +27,7 @@ require("./lib/utils/randomNum");
 require("./lib/utils/pickRandom");
 require("./lib/utils/returnOnNumber");
 require("./lib/utils/isNullUndefined");
+require("./lib/utils/mainPath");
 
 require("./lib/variables/regex");
 
