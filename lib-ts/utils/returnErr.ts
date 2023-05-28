@@ -1,7 +1,7 @@
 import { log } from "./log";
 
 export function returnErr(e: Error | Object, logerr?: Boolean, fullstack?: Boolean) {
-    if (!e || !(e instanceof Error)) return "";
+    if (!e) return "";
     // @ts-ignore
     let r2 = (e?.error ?? e);
     let r = "";

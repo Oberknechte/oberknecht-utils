@@ -4,7 +4,7 @@ exports.returnErr = void 0;
 var log_1 = require("./log");
 function returnErr(e, logerr, fullstack) {
     var _a;
-    if (!e || !(e instanceof Error))
+    if (!e)
         return "";
     // @ts-ignore
     var r2 = ((_a = e === null || e === void 0 ? void 0 : e.error) !== null && _a !== void 0 ? _a : e);
