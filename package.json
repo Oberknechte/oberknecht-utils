@@ -1,10 +1,12 @@
 {
   "name": "oberknecht-utils",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "Utils for oberknecht packages",
-  "main": "index.js",
+  "main": "./lib-ts/utils/index",
+  "module": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/jubewe/oberknecht-utils/issues"
   },
-  "homepage": "https://github.com/jubewe/oberknecht-utils#readme"
+  "homepage": "https://github.com/jubewe/oberknecht-utils#readme",
+  "devDependencies": {
+    "@types/node": "^20.2.3"
+  }
 }

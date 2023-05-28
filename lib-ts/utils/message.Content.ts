@@ -1,0 +1,3 @@
+export function messageContent(rawMessage: string | any): string | undefined {
+    return rawMessage?.split(" ")?.slice(4)?.join(" ")?.replace(/(^:|^\s|\s$)/g, "")?.replace(/[\s]{2,}/g, " ") ?? undefined;
+};

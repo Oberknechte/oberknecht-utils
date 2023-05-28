@@ -1,0 +1,8 @@
+{
+    "include": ["./lib-ts/utils/index.ts"],
+    "compilerOptions": {
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "outDir": "./lib-js"
+    }
+}
