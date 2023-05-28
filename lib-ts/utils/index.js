@@ -1,1 +1,1 @@
-module.exports = require("../../lib/utils/index");
+module.exports = require("../../lib-js/utils/index");
