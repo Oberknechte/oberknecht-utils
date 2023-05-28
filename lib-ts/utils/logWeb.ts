@@ -66,8 +66,6 @@ export function logWeb(logopt: String | Number, logmsg: String | Number | null, 
     };
 
     let logopt_ = (["log", "info", "error", "debug"][[0, 1, 2, 3].at(parseInt(String(logopt)))]);
-    function nicedate() {
-        return new Date(new Date().setMinutes(new Date().getMinutes() - new Date().getTimezoneOffset())).toISOString().split(".")[0].replace("T", " ");
-    };
-    console[logopt_](`%c [Ju] %c [${nicedate()}]` + (parsedlog[0] ? "\n" : "") + parsedlog.join(""), "color: #000; background: #00FFFF; font-weight: bold", "color: #9c9789; font-size: 8px", ...logcolors, ...[...((typeof unformattedlogs[0] === "string") ? ["\n" + unformattedlogs[0]] : [unformattedlogs[0]]), ...unformattedlogs.slice(1)]);
+    let nicedate = () => { return new Date(new Date().setMinutes(new Date().getMinutes() - new Date().getTimezoneOffset())).toISOString().split(".")[0].replace("T", " ") };
+    console[logopt_](`%c [Ju] %c [${nicedate()}]` + (parsedlog[0] ? "\n" : "") + parsedlog.join(""), "color: #000; background: #00FFFF; font-weight: bold", "color: #9c9789; font-size: 8px", ...logcolors, ...[...((typeof unformattedlogs[0] === "string") ? ["\n" + (unformattedlogs[0] ?? "")] : [(unformattedlogs[0] ?? "")]), ...(unformattedlogs.slice(1) ?? [])]);
 };

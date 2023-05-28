@@ -28,7 +28,7 @@ exports.__esModule = true;
 exports.logWeb = void 0;
 var convertToArray_1 = require("./convertToArray");
 function logWeb(logopt, logmsg, logdecoration, logcolorfg, logcolorbg) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
     if (logopt && !logmsg) {
         logmsg = logopt;
         logopt = 0;
@@ -101,11 +101,8 @@ function logWeb(logopt, logmsg, logdecoration, logcolorfg, logcolorbg) {
     }
     ;
     var logopt_ = (["log", "info", "error", "debug"][[0, 1, 2, 3].at(parseInt(String(logopt)))]);
-    function nicedate() {
-        return new Date(new Date().setMinutes(new Date().getMinutes() - new Date().getTimezoneOffset())).toISOString().split(".")[0].replace("T", " ");
-    }
-    ;
-    console[logopt_].apply(console, __spreadArray(__spreadArray(["%c [Ju] %c [".concat(nicedate(), "]") + (parsedlog[0] ? "\n" : "") + parsedlog.join(""), "color: #000; background: #00FFFF; font-weight: bold", "color: #9c9789; font-size: 8px"], __read(logcolors), false), __read(__spreadArray(__spreadArray([], __read(((typeof unformattedlogs[0] === "string") ? ["\n" + unformattedlogs[0]] : [unformattedlogs[0]])), false), __read(unformattedlogs.slice(1)), false)), false));
+    var nicedate = function () { return new Date(new Date().setMinutes(new Date().getMinutes() - new Date().getTimezoneOffset())).toISOString().split(".")[0].replace("T", " "); };
+    console[logopt_].apply(console, __spreadArray(__spreadArray(["%c [Ju] %c [".concat(nicedate(), "]") + (parsedlog[0] ? "\n" : "") + parsedlog.join(""), "color: #000; background: #00FFFF; font-weight: bold", "color: #9c9789; font-size: 8px"], __read(logcolors), false), __read(__spreadArray(__spreadArray([], __read(((typeof unformattedlogs[0] === "string") ? ["\n" + ((_k = unformattedlogs[0]) !== null && _k !== void 0 ? _k : "")] : [((_l = unformattedlogs[0]) !== null && _l !== void 0 ? _l : "")])), false), __read(((_m = unformattedlogs.slice(1)) !== null && _m !== void 0 ? _m : [])), false)), false));
 }
 exports.logWeb = logWeb;
 ;

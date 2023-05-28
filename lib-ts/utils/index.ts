@@ -29,5 +29,7 @@ export * from "./returnOnNumber";
 export * from "./isNullUndefined";
 export * from "./mainPath";
 export * from "./logWeb";
+export * from "./log";
+export * from "./returnErr";
 
 export * from "../variables/regex";
