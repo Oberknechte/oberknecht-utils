@@ -43,4 +43,5 @@ __exportStar(require("./mainPath"), exports);
 __exportStar(require("./logWeb"), exports);
 __exportStar(require("./log"), exports);
 __exportStar(require("./returnErr"), exports);
+__exportStar(require("./extendedTypeof"), exports);
 __exportStar(require("../variables/regex"), exports);

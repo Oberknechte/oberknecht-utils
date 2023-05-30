@@ -31,5 +31,6 @@ export * from "./mainPath";
 export * from "./logWeb";
 export * from "./log";
 export * from "./returnErr";
+export * from "./extendedTypeof";
 
 export * from "../variables/regex";
