@@ -1,10 +1,11 @@
+import { extendedTypeof } from "./extendedTypeof";
 import { pad2 } from "./pad2";
 import { recreate } from "./recreate";
 
-/** @param {number} time time: time in ms @param {number} timeopt @param {number} timedigits @returns {time} Parsed time */
-export function cleanTime(time: number /** time in ms */, timeopt: number, timedigits: number): {} {
+export function cleanTime(time: number /** time in ms */, timeopt: number, timedigits: number | "all" | "auto", noMs: boolean): {} {
     let timedigits_ = recreate(timedigits);
-    if (!(timedigits_ ?? undefined) || typeof timedigits_ !== "number" || timedigits <= 0) timedigits_ = "auto";
+    // @ts-ignore
+    if (!(timedigits_ ?? undefined) || (typeof timedigits_ !== "number" && timedigits_ !== "all") || timedigits <= 0) timedigits_ = "auto";
     let r: {} = { time: [], order: [], tag: "" };
     let t = {
         years: {
@@ -32,12 +33,14 @@ export function cleanTime(time: number /** time in ms */, timeopt: number, timed
     }
     t.milliseconds.time = parseInt(t.milliseconds.time.toString().substring(0, 3));
     let ctlast;
+    let u = 0;
+    let autonum = 2;
     for (let i = 0; i < Object.keys(t).length; i++) {
         let tc = Object.keys(t)[i];
         let tco = t[tc];
         let cte: number = tco.time;
-        if ((["auto"].includes(timedigits_) && ((i < ((Object.keys(t).length > 0) ? Object.keys(t).length - 1 : Object.keys(t).length)) || i === 0)) || timedigits_ > 0) {
-            if (cte > 0 || ctlast) {
+        if (((i !== (Object.keys(t).length - 1)) || !noMs) && (["auto"].includes(timedigits_) && (u < autonum)) || timedigits_ === "all" || timedigits_ > 0) {
+            if (cte > 0) {
                 if (!(ctlast ?? undefined)) r["tag"] = `${tco["tag"]}${cte > 1 ? "s" : ""}`;
                 switch (timeopt) {
                     case 1:
@@ -58,8 +61,9 @@ export function cleanTime(time: number /** time in ms */, timeopt: number, timed
                     };
                 };
 
-                timedigits_--;
+                if (extendedTypeof(timedigits_) === "number") timedigits_--;
                 ctlast = cte;
+                u++;
             };
         } else {
             i = Object.keys(t).length;
