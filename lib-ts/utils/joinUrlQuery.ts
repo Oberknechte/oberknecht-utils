@@ -1,6 +1,6 @@
 import { convertToArray } from "./convertToArray";
 
-export function joinUrlQuery(queryname: string | Array<string>, queryparams: string | Array<string>, firstquery: boolean, appendifempty: boolean) {
+export function joinUrlQuery(queryname: string | Array<string>, queryparams: string | Array<string>, firstquery?: boolean, appendifempty?: boolean) {
     if (!queryparams) { queryparams = [...arguments]; queryparams.shift() };
 
     let queryname_ = convertToArray(queryname, false);
