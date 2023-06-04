@@ -1,4 +1,4 @@
-export function getAllObjectKeysTree(obj: object, parentkeynames: boolean): string[] {
+export function getAllObjectKeysTree(obj: object, parentkeynames?: boolean): string[] {
     if (!obj || typeof obj !== "object") return [];
     let keys: string[] = [];
 
