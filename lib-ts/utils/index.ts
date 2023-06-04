@@ -32,5 +32,7 @@ export * from "./logWeb";
 export * from "./log";
 export * from "./returnErr";
 export * from "./extendedTypeof";
+export * from "./getAllObjectKeysTree";
+export * from "./getByObjectFromTree"
 
 export * from "../variables/regex";
