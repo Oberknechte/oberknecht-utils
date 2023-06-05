@@ -1,14 +1,14 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.returnOnNumber = void 0;
-var convertToArray_1 = require("./convertToArray");
-var extendedTypeof_1 = require("./extendedTypeof");
-var isNullUndefined_1 = require("./isNullUndefined");
+const convertToArray_1 = require("./convertToArray");
+const extendedTypeof_1 = require("./extendedTypeof");
+const isNullUndefined_1 = require("./isNullUndefined");
 function returnOnNumber(input, targetNumber, returnOnGreater, returnOnGreaterEquals, returnOnSmaller, returnOnSmallerEquals, returnDefault) {
     if (["null", "undefined"].includes((0, extendedTypeof_1.extendedTypeof)(input)))
         return undefined;
     targetNumber = ((0, isNullUndefined_1.isNullUndefined)((0, extendedTypeof_1.extendedTypeof)(targetNumber)) ? 2 : targetNumber);
-    var parsedSearchNumber;
+    let parsedSearchNumber;
     switch ((0, extendedTypeof_1.extendedTypeof)(input)) {
         case "string":
         case "array":

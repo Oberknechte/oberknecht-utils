@@ -1,8 +1,8 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.isNaM = void 0;
 function isNaM(s) {
-    if (!(s !== null && s !== void 0 ? s : undefined))
+    if (!(s ?? undefined))
         return undefined;
     return /\W/gi.test(s);
 }

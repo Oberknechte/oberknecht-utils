@@ -1,4 +1,4 @@
-import * as oberknechtUtils from "./lib/utils/index";
+import * as oberknechtUtils from "./lib-ts/utils/index";
 
-export * from "./lib/utils/index";
+export * from "./lib-ts/utils/index";
 exports = oberknechtUtils;

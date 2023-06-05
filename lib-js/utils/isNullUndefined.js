@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.isNullUndefined = void 0;
 function isNullUndefined(searchParam) {
     return [null, undefined].includes(searchParam);

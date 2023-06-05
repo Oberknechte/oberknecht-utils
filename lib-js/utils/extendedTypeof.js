@@ -1,9 +1,9 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.extendedTypeof = void 0;
-var regex_1 = require("../variables/regex");
+const regex_1 = require("../variables/regex");
 function extendedTypeof(item) {
-    var type = typeof item;
+    let type = typeof item;
     switch (type) {
         case "object":
             {

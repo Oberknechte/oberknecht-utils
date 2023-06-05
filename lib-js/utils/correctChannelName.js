@@ -1,10 +1,10 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.correctChannelName = void 0;
 function correctChannelName(channel) {
-    if (!(channel !== null && channel !== void 0 ? channel : undefined))
+    if (!(channel ?? undefined))
         return undefined;
-    return "#".concat(channel.toLowerCase().trim().replace(/^#/g, ""));
+    return `#${channel.toLowerCase().trim().replace(/^#/g, "")}`;
 }
 exports.correctChannelName = correctChannelName;
 ;

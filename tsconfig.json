@@ -1,8 +1,13 @@
 {
-    "include": ["./lib-ts/utils/index.ts"],
+    "include": [
+        "./lib-ts/utils/index.ts"
+    ],
     "compilerOptions": {
         "downlevelIteration": true,
         "esModuleInterop": true,
-        "outDir": "./lib-js"
+        "outDir": "./lib-js",
+        "declaration": true,
+        "module": "NodeNext",
+        "target": "ESNext"
     }
 }

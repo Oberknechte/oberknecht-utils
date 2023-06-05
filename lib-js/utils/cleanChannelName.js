@@ -1,8 +1,11 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanChannelName = void 0;
+const recreate_1 = require("./recreate");
 function cleanChannelName(channel) {
-    return channel.toString().trim().replace(/^#/g, "");
+    if (!channel)
+        return undefined;
+    return (0, recreate_1.recreate)(channel).toString().trim().replace(/^#/g, "");
 }
 exports.cleanChannelName = cleanChannelName;
 ;

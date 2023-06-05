@@ -1,14 +1,14 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.expectedEventName = void 0;
 function expectedEventName(eventName) {
-    if (!(eventName !== null && eventName !== void 0 ? eventName : undefined))
+    if (!(eventName ?? undefined))
         return undefined;
-    var expectedeventnames = {
+    const expectedeventnames = {
         "ping": "pong",
         "join": "353"
     };
-    var eventName_ = eventName.toLowerCase();
+    let eventName_ = eventName.toLowerCase();
     if (expectedeventnames[eventName_]) {
         return expectedeventnames[eventName_].toUpperCase();
     }
