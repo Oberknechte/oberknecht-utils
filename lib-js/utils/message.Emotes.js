@@ -7,9 +7,9 @@ function messageEmotes(rawEmotes) {
     let r = {};
     rawEmotes?.split(",")?.forEach(a => {
         let b = a.split(":");
-        if (!b?.[0])
-            return;
         let c = b?.[1]?.split("-");
+        if (c?.[1])
+            return {};
         r[b[0]] = {
             "start": c[0],
             "end": c[1]
