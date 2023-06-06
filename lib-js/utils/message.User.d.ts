@@ -1,1 +1,1 @@
-export declare function messageUser(rawMessage: string | any): string | undefined;
+export declare function messageUser<usertype extends string>(rawMessage: usertype | undefined): usertype extends string ? string : string | undefined;

@@ -1,1 +1,1 @@
-export declare function correctMessage(message: string | any): string | undefined;
+export declare function correctMessage(message: string | any): string;
