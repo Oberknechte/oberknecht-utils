@@ -34,4 +34,5 @@ export * from "./returnErr";
 export * from "./extendedTypeof";
 export * from "./getAllObjectKeysTree";
 export * from "./getByObjectFromTree";
+export * from "./isConstructor";
 export * from "../variables/regex";
