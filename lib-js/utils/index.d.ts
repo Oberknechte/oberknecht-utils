@@ -38,4 +38,6 @@ export * from "./isConstructor";
 export * from "./createID";
 export * from "./staticSpacer";
 export * from "./stackName";
+export * from "./rf";
+export * from "./wf";
 export * from "../variables/regex";

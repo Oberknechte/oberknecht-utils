@@ -54,4 +54,6 @@ __exportStar(require("./isConstructor"), exports);
 __exportStar(require("./createID"), exports);
 __exportStar(require("./staticSpacer"), exports);
 __exportStar(require("./stackName"), exports);
+__exportStar(require("./rf"), exports);
+__exportStar(require("./wf"), exports);
 __exportStar(require("../variables/regex"), exports);
