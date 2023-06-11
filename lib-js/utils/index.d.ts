@@ -36,4 +36,6 @@ export * from "./getAllObjectKeysTree";
 export * from "./getByObjectFromTree";
 export * from "./isConstructor";
 export * from "./createID";
+export * from "./staticSpacer";
+export * from "./stackName";
 export * from "../variables/regex";

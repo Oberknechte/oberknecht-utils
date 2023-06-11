@@ -52,4 +52,6 @@ __exportStar(require("./getAllObjectKeysTree"), exports);
 __exportStar(require("./getByObjectFromTree"), exports);
 __exportStar(require("./isConstructor"), exports);
 __exportStar(require("./createID"), exports);
+__exportStar(require("./staticSpacer"), exports);
+__exportStar(require("./stackName"), exports);
 __exportStar(require("../variables/regex"), exports);
