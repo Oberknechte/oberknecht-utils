@@ -51,4 +51,5 @@ __exportStar(require("./extendedTypeof"), exports);
 __exportStar(require("./getAllObjectKeysTree"), exports);
 __exportStar(require("./getByObjectFromTree"), exports);
 __exportStar(require("./isConstructor"), exports);
+__exportStar(require("./createID"), exports);
 __exportStar(require("../variables/regex"), exports);

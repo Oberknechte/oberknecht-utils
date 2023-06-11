@@ -35,5 +35,6 @@ export * from "./extendedTypeof";
 export * from "./getAllObjectKeysTree";
 export * from "./getByObjectFromTree";
 export * from "./isConstructor";
+export * from "./createID";
 
 export * from "../variables/regex";
