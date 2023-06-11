@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.randomId = void 0;
-function randomId(length) {
+exports.createID = void 0;
+function createID(length) {
     let length_ = (length ?? 5);
     let r = "";
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
@@ -11,5 +11,5 @@ function randomId(length) {
     ;
     return r;
 }
-exports.randomId = randomId;
+exports.createID = createID;
 ;

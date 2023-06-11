@@ -1,4 +1,4 @@
-export function randomId(length?: number) {
+export function createID(length?: number) {
     let length_ = (length ?? 5);
     let r = "";
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";

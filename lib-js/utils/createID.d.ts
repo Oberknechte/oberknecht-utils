@@ -1,1 +1,1 @@
-export declare function randomId(length?: number): string;
+export declare function createID(length?: number): string;
