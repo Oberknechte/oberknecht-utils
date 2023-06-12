@@ -40,4 +40,6 @@ export * from "./staticSpacer";
 export * from "./stackName";
 export * from "./rf";
 export * from "./wf";
+export * from "./dissolveArray";
+export * from "./joinString";
 export * from "../variables/regex";

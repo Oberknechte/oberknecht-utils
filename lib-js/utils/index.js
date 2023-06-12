@@ -56,4 +56,6 @@ __exportStar(require("./staticSpacer"), exports);
 __exportStar(require("./stackName"), exports);
 __exportStar(require("./rf"), exports);
 __exportStar(require("./wf"), exports);
+__exportStar(require("./dissolveArray"), exports);
+__exportStar(require("./joinString"), exports);
 __exportStar(require("../variables/regex"), exports);
