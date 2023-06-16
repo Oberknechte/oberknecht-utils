@@ -11,8 +11,11 @@ function recreate(inp) {
         case "object": {
             if (Array.isArray(inp))
                 return [...inp];
-            if (inp instanceof HTMLElement)
-                return inp.cloneNode(true);
+            try {
+                if (inp instanceof HTMLElement)
+                    return inp.cloneNode(true);
+            }
+            catch (nothin) { }
             if (regex_1.regex.jsonreg().test(JSON.stringify(inp)))
                 return { ...inp };
             return Object.assign({}, inp);
