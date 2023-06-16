@@ -1,6 +1,6 @@
 {
   "name": "oberknecht-utils",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Utils for oberknecht packages",
   "main": "./lib-ts/utils/index",
   "module": "",
@@ -26,6 +26,7 @@
     "typescript": "^5.2.0-dev.20230606"
   },
   "dependencies": {
+    "@types/typescript": "^2.0.0",
     "path": "^0.12.7"
   }
 }
