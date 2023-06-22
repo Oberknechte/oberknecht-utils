@@ -40,4 +40,6 @@ export * from "./staticSpacer";
 export * from "./stackName";
 export * from "./dissolveArray";
 export * from "./joinString";
+export * from "./isBracketValid";
+export * from "./getFullNumber";
 export * from "../variables/regex";
