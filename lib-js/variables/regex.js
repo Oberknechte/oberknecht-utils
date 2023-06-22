@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.regex = void 0;
 class regex {
     static numregex = () => {
-        return new RegExp(`^([\\d]{1,})$`, "g");
+        return new RegExp(`^((\-)*[\\d]{1,})$`, "g");
     };
     static tokenreg = () => {
         return new RegExp(`^\\b[\\w]{30}\\b$`, "g");

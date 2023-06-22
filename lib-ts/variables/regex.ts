@@ -1,6 +1,6 @@
 export class regex {
   static numregex = () => {
-    return new RegExp(`^([\\d]{1,})$`, "g");
+    return new RegExp(`^((\-)*[\\d]{1,})$`, "g");
   };
   static tokenreg = () => {
     return new RegExp(`^\\b[\\w]{30}\\b$`, "g");
