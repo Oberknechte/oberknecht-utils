@@ -42,4 +42,5 @@ export * from "./dissolveArray";
 export * from "./joinString";
 export * from "./isBracketValid";
 export * from "./getFullNumber";
+export * from "./parseProcessArgs";
 export * from "../variables/regex";

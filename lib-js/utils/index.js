@@ -58,4 +58,5 @@ __exportStar(require("./dissolveArray"), exports);
 __exportStar(require("./joinString"), exports);
 __exportStar(require("./isBracketValid"), exports);
 __exportStar(require("./getFullNumber"), exports);
+__exportStar(require("./parseProcessArgs"), exports);
 __exportStar(require("../variables/regex"), exports);
