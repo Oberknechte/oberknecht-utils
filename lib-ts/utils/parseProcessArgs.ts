@@ -12,7 +12,7 @@ type processArgsType = Record<string, processArgEntry>;
 export function parseProcessArgs(
   args: typeof process.argv,
   processArgs?: processArgsType
-) {
+): processArgsType {
   let processArgs_ = recreate(processArgs ?? {});
 
   let lastCommand: processArgEntry;
@@ -24,7 +24,7 @@ export function parseProcessArgs(
       )?.[0];
 
       if (!c) return (lastCommand = undefined);
-      
+
       let d = processArgs_[c];
       d.args = [];
       lastCommand = d;

@@ -43,5 +43,11 @@ export * from "./joinString";
 export * from "./isBracketValid";
 export * from "./getFullNumber";
 export * from "./parseProcessArgs";
+export * from "./getKeyArraysFromObject";
+export * from "./createObjectFromKeys";
+export * from "./getKeyFromObject";
+export * from "./deleteKeyFromObject";
+export * from "./addKeysToObject";
+export * from "./addAppendKeysToObject";
 
 export * from "../variables/regex";
