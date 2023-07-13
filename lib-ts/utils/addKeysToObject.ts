@@ -5,9 +5,9 @@ export function addKeysToObject(
   keypath: string | string[],
   value: any
 ): Record<string, any> {
+  let object_ = recreate(object);
   let keypath_ = convertToArray(keypath, false);
 
-  let object_ = recreate(object);
   let parentObj = object_;
   for (let i = 0; i < keypath_.length - 1; i++) {
     let key = keypath_[i];

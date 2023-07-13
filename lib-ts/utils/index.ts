@@ -49,5 +49,6 @@ export * from "./getKeyFromObject";
 export * from "./deleteKeyFromObject";
 export * from "./addKeysToObject";
 export * from "./addAppendKeysToObject";
+export * from "./getFunctionArgumentNames";
 
 export * from "../variables/regex";
