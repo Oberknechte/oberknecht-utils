@@ -1,6 +1,6 @@
 {
   "name": "oberknecht-utils",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Utils for oberknecht packages",
   "main": "./lib-ts/utils/index",
   "module": "",
@@ -23,10 +23,9 @@
   "homepage": "https://github.com/jubewe/oberknecht-utils#readme",
   "devDependencies": {
     "@types/node": "^20.2.3",
-    "typescript": "^5.2.0-dev.20230606"
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@types/typescript": "^2.0.0",
     "path": "^0.12.7"
   }
 }
