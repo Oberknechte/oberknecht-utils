@@ -66,4 +66,5 @@ __exportStar(require("./deleteKeyFromObject"), exports);
 __exportStar(require("./addKeysToObject"), exports);
 __exportStar(require("./addAppendKeysToObject"), exports);
 __exportStar(require("./getFunctionArgumentNames"), exports);
+__exportStar(require("./getDateParsed"), exports);
 __exportStar(require("../variables/regex"), exports);

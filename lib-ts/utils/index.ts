@@ -50,5 +50,6 @@ export * from "./deleteKeyFromObject";
 export * from "./addKeysToObject";
 export * from "./addAppendKeysToObject";
 export * from "./getFunctionArgumentNames";
+export * from "./getDateParsed";
 
 export * from "../variables/regex";
