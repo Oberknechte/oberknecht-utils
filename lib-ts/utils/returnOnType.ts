@@ -12,6 +12,6 @@ export function returnOnType<
   returnElse?: returnElseInput
 ): returnIfTypeInput | returnElseInput | undefined {
   let types = convertToArray(types_, false);
-  if (!types.includes(extendedTypeof(input))) return returnIfType;
+  if (types.includes(extendedTypeof(input))) return returnIfType;
   else return returnElse;
 }
