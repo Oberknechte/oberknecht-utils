@@ -1,6 +1,6 @@
 {
   "name": "oberknecht-utils",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Utils for oberknecht packages",
   "main": "./lib-ts/utils/index",
   "module": "",

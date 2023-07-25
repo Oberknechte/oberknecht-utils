@@ -5,8 +5,8 @@ function expectedEventName(eventName) {
     if (!(eventName ?? undefined))
         return undefined;
     const expectedeventnames = {
-        "ping": "pong",
-        "join": "353"
+        ping: "pong",
+        join: "353",
     };
     let eventName_ = eventName.toLowerCase();
     if (expectedeventnames[eventName_]) {
@@ -15,8 +15,6 @@ function expectedEventName(eventName) {
     else if (Object.values(expectedeventnames).includes(eventName_)) {
         return expectedeventnames[Object.values(expectedeventnames).indexOf(eventName_)].toUpperCase();
     }
-    ;
     return eventName.toUpperCase();
 }
 exports.expectedEventName = expectedEventName;
-;

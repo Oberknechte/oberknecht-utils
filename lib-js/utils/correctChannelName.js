@@ -7,4 +7,3 @@ function correctChannelName(channel) {
     return `#${channel.toLowerCase().trim().replace(/^#/g, "")}`;
 }
 exports.correctChannelName = correctChannelName;
-;

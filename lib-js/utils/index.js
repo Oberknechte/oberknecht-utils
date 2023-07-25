@@ -67,4 +67,6 @@ __exportStar(require("./addKeysToObject"), exports);
 __exportStar(require("./addAppendKeysToObject"), exports);
 __exportStar(require("./getFunctionArgumentNames"), exports);
 __exportStar(require("./getDateParsed"), exports);
+__exportStar(require("./returnOnType"), exports);
+__exportStar(require("./splitPixelize"), exports);
 __exportStar(require("../variables/regex"), exports);

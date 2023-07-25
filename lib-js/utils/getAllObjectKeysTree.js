@@ -6,7 +6,7 @@ function getAllObjectKeysTree(obj, parentkeynames) {
         return [];
     let keys = [];
     let _getobj = (obj2) => {
-        Object.keys(obj2).forEach(o => {
+        Object.keys(obj2).forEach((o) => {
             if (typeof obj2[o] === "object" && Object.keys(obj2[o])) {
                 if (parentkeynames)
                     keys.push(o);
@@ -15,11 +15,9 @@ function getAllObjectKeysTree(obj, parentkeynames) {
             else {
                 keys.push(o);
             }
-            ;
         });
     };
     _getobj(obj);
     return keys;
 }
 exports.getAllObjectKeysTree = getAllObjectKeysTree;
-;

@@ -7,4 +7,3 @@ function numberspacer(n, replacer) {
     return n.toString()?.replace(/\B(?=(\d{3})+(?!\d))/g, replacer || " ");
 }
 exports.numberspacer = numberspacer;
-;

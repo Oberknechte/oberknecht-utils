@@ -5,4 +5,3 @@ function messageEmoteSets(rawEmoteSets) {
     return rawEmoteSets?.split(",") ?? [];
 }
 exports.messageEmoteSets = messageEmoteSets;
-;

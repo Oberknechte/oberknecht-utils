@@ -8,4 +8,3 @@ function messageUser(rawMessage) {
     return match?.[0];
 }
 exports.messageUser = messageUser;
-;

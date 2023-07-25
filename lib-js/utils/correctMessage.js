@@ -7,4 +7,3 @@ function correctMessage(message) {
     return message.trim().replace(/\s+/g, " ");
 }
 exports.correctMessage = correctMessage;
-;

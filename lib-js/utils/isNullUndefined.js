@@ -5,4 +5,3 @@ function isNullUndefined(searchParam) {
     return [null, undefined].includes(searchParam);
 }
 exports.isNullUndefined = isNullUndefined;
-;

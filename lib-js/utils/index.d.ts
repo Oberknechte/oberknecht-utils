@@ -51,4 +51,6 @@ export * from "./addKeysToObject";
 export * from "./addAppendKeysToObject";
 export * from "./getFunctionArgumentNames";
 export * from "./getDateParsed";
+export * from "./returnOnType";
+export * from "./splitPixelize";
 export * from "../variables/regex";

@@ -1,5 +1,5 @@
 export function correctMessage(message: string | any): string {
-    if (!(message ?? undefined)) return "";
+  if (!(message ?? undefined)) return "";
 
-    return message.trim().replace(/\s+/g, " ");
-};
+  return message.trim().replace(/\s+/g, " ");
+}

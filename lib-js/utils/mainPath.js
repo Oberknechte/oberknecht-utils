@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.mainPath = void 0;
 const path_1 = __importDefault(require("path"));
 function mainPath(dir) {
-    return path_1.default.resolve(process.cwd(), (dir ?? ""));
+    return path_1.default.resolve(process.cwd(), dir ?? "");
 }
 exports.mainPath = mainPath;
-;

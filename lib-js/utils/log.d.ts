@@ -1,1 +1,1 @@
-export declare function log(logopt: Number | String, logmsg?: any, logcolorfg?: String, logcolorbg?: String): void;
+export declare function log(logopt: number | string, logmsg?: any, logcolorfg?: string, logcolorbg?: string): void;

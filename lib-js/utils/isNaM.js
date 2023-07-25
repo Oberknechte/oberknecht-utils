@@ -7,4 +7,3 @@ function isNaM(s) {
     return /\W/gi.test(s);
 }
 exports.isNaM = isNaM;
-;

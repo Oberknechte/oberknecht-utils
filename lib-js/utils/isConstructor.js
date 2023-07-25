@@ -8,12 +8,13 @@ function isConstructor(f, errorMsgChecker) {
         new f();
     }
     catch (e) {
-        if (e.message && (errorMsgChecker ? errorMsgChecker(e.message) : (e.message === "response is undefined")))
+        if (e.message &&
+            (errorMsgChecker
+                ? errorMsgChecker(e.message)
+                : e.message === "response is undefined"))
             return true;
         return false;
     }
-    ;
     return true;
 }
 exports.isConstructor = isConstructor;
-;

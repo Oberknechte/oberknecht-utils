@@ -1,1 +1,1 @@
-export declare function logWeb(logopt: String | Number, logmsg: String | Number | null, logdecoration?: String, logcolorfg?: String, logcolorbg?: String): void;
+export declare function logWeb(logopt: string | number, logmsg: string | number | null, logdecoration?: string, logcolorfg?: string, logcolorbg?: string): void;
