@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.addAppendKeysToObject = void 0;
 const _1 = require(".");
 function addAppendKeysToObject(object, keys, value) {
-    let object_ = (0, _1.recreate)(object);
+    let object_ = object;
     let keys_ = (0, _1.convertToArray)(keys, false);
     let oldvalue = (0, _1.getKeyFromObject)(object_, keys_);
     let newvalue = oldvalue ?? value;

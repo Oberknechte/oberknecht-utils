@@ -12,7 +12,7 @@ export function addAppendKeysToObject(
   keys: string | string[],
   value: any
 ): Record<string, any> {
-  let object_ = recreate(object);
+  let object_ = object;
   let keys_ = convertToArray(keys, false);
 
   let oldvalue = getKeyFromObject(object_, keys_);
