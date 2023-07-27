@@ -8,8 +8,13 @@ function extendedTypeof(item) {
         case "object": {
             if (Array.isArray(item))
                 return "array";
-            if (regex_1.regex.jsonreg().test(JSON.stringify(item)))
-                return "json";
+            try {
+                // try catch due to error when trying to convert circular structure in object to json
+                // (Converting circular structure to JSON)
+                if (regex_1.regex.jsonreg().test(JSON.stringify(item)))
+                    return "json";
+            }
+            catch (e) { }
             if (item === null)
                 return "null";
         }
