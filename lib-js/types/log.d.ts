@@ -1,0 +1,33 @@
+export declare const logColors: {
+    readonly reset: "0";
+    readonly bright: "1";
+    readonly dim: "2";
+    readonly underscore: "4";
+    readonly blink: "5";
+    readonly reverse: "7";
+    readonly hidden: "8";
+    readonly fgblack: "30";
+    readonly fgred: "31";
+    readonly fggreen: "32";
+    readonly fgyellow: "33";
+    readonly fgblue: "34";
+    readonly fgmagenta: "35";
+    readonly fgcyan: "36";
+    readonly fgwhite: "37";
+    readonly bgblack: "40";
+    readonly bgred: "41";
+    readonly bggreen: "42";
+    readonly bgyellow: "43";
+    readonly bgblue: "44";
+    readonly bgmagenta: "45";
+    readonly bgcyan: "46";
+    readonly bgwhite: "47";
+};
+export declare const logColorValues: ("0" | "1" | "2" | "4" | "5" | "7" | "8" | "33" | "34" | "35" | "36" | "37" | "40" | "41" | "42" | "43" | "44" | "45" | "46" | "47" | "30" | "31" | "32")[];
+type logColorValueType = typeof logColorValues[number];
+export type logOptConfigType = {
+    option?: number;
+    logColorFG?: logColorValueType;
+    logColorBG?: logColorValueType;
+};
+export {};

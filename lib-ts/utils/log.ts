@@ -1,86 +1,72 @@
-function date_() {
-  return new Date(
-    new Date().setMinutes(
-      new Date().getMinutes() - new Date().getTimezoneOffset()
-    )
-  )
-    .toISOString()
-    .split("Z")[0]
-    .replace("T", " ");
-}
+import { concatJSON, extendedTypeof, getDateParsed, regex, returnErr } from ".";
+import { logColorValues, logColors, logOptConfigType } from "../types/log";
+
+const maxGlobalLogs = 100;
+
+const casecolors = {
+  fg: { "0": "", "1": "30", "2": "41" },
+  bg: { "0": "", "1": "43", "2": "41" },
+};
+
+const logOpts = [1, 2, 3];
+type logOptsType = typeof logOpts[number];
 
 export function log(
-  logopt: number | string,
-  logmsg?: any,
-  logcolorfg?: string,
-  logcolorbg?: string
+  logOpt: logOptConfigType | logOptsType | any,
+  ...logMsg: any
 ): void {
   if (!global.logs) global.logs = {};
-  if (!global.logs[String(logopt)]) global.logs[String(logopt)] = {};
+  if (!global.logs[String(logOpt)]) global.logs[String(logOpt)] = {};
   if (!global.logs.all) global.logs.all = {};
-  if (typeof logmsg === "string") {
-    if (global.logs)
-      global.logs.all[Date.now()] = global.logs[String(logopt)][Date.now()] = [
-        logopt,
-        logmsg?.replace(/\x1b\[[\w;]+m/g, ""),
-        date_(),
-      ];
-  }
-  if (!logmsg && logopt) {
-    logmsg = logopt;
-    logopt = 0;
-  }
 
-  const logcolors = {
-    reset: "0",
-    bright: "1",
-    dim: "2",
-    underscore: "4",
-    blink: "5",
-    reverse: "7",
-    hidden: "8",
-    fgblack: "30",
-    fgred: "31",
-    fggreen: "32",
-    fgyellow: "33",
-    fgblue: "34",
-    fgmagenta: "35",
-    fgcyan: "36",
-    fgwhite: "37",
-    bgblack: "40",
-    bgred: "41",
-    bggreen: "42",
-    bgyellow: "43",
-    bgblue: "44",
-    bgmagenta: "45",
-    bgcyan: "46",
-    bgwhite: "47",
+  let logOptOption = logOpt?.option ?? (logOpts.includes(logOpt) ? logOpt : 0);
+
+  let logOpt_: logOptConfigType = {
+    option: logOptOption,
+    logColorFG: logOpt?.logColorFG ?? casecolors.fg[logOptOption] ?? "0",
+    logColorBG: logOpt?.logColorBG ?? casecolors.bg[logOptOption] ?? "0",
   };
-  const casecolors = {
-    fg: { "0": "", "1": "30", "2": "41" },
-    bg: { "0": "", "1": "43", "2": "41" },
-  };
-  
-  logcolorfg = `\x1b[${
-    (logcolorfg ?? 0) === 0
-      ? casecolors.fg[logopt ?? 0]
-      : logcolors[logcolorfg]
-      ? logcolors[logcolorfg]
-      : logcolorfg ?? casecolors.fg[logopt ?? 0]
-  }m`;
-  
-  logcolorbg = `\x1b[${
-    (logcolorbg ?? 0) === 0
-      ? casecolors.bg[logopt ?? 0]
-      : logcolors[logcolorbg]
-      ? logcolors[logcolorbg]
-      : logcolorbg ?? casecolors[logopt ?? 0]
-  }m`;
+
+  let logMsg_ = [...logMsg];
+
+  if (
+    (extendedTypeof(logOpt) !== "json" ||
+      (!logOpt.option && !logOpt.logColorFG && !logOpt.logColorBG)) &&
+    !logOpts.includes(logOpt)
+  )
+    logMsg_.unshift(logOpt);
+
+  [(global.logs[String(logOptOption)], global.logs.all)].forEach((a) => {
+    a = concatJSON(
+      Object.keys(a ?? {})
+        .slice(0, maxGlobalLogs)
+        .map((b) => {
+          return { [b]: a[b] };
+        })
+    );
+  });
+
+  if (global.logs)
+    global.logs.all[Date.now()] = global.logs[String(logOpt)][Date.now()] = [
+      logOpt_,
+      logMsg_?.map((a) => {
+        if (typeof a === "string") return a?.replace(/\x1b\[[\w;]+m/g, "");
+        return a;
+      }),
+      getDateParsed(),
+    ];
+
+  logOpt = logOpt ?? 0;
+
+  const logcolorfg = `\x1b[${logOpt_.logColorFG}m`;
+  const logcolorbg = `\x1b[${logOpt_.logColorBG}m`;
+
   const logm = [
-    `${logcolorbg}${logcolorfg} ${date_()} \x1b[0m >`,
-    logmsg?.error?.message ?? logmsg?.error ?? logmsg?.message ?? logmsg,
+    `${logcolorbg}${logcolorfg} ${getDateParsed()} \x1b[0m >`,
+    ...logMsg_,
   ];
-  switch (logopt) {
+
+  switch (logOpt) {
     default:
     case 0:
       return console.log(...logm);

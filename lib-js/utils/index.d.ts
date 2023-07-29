@@ -53,4 +53,5 @@ export * from "./getFunctionArgumentNames";
 export * from "./getDateParsed";
 export * from "./returnOnType";
 export * from "./splitPixelize";
+export * from "./concatJSON";
 export * from "../variables/regex";
