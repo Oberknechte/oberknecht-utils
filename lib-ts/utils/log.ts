@@ -1,5 +1,5 @@
-import { concatJSON, extendedTypeof, getDateParsed, regex, returnErr } from ".";
-import { logColorValues, logColors, logOptConfigType } from "../types/log";
+import { concatJSON, extendedTypeof, getDateParsed } from ".";
+import { logOptConfigType } from "../types/log";
 
 const maxGlobalLogs = 100;
 
