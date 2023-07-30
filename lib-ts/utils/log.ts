@@ -8,7 +8,7 @@ const casecolors = {
   bg: { "0": "", "1": "43", "2": "41" },
 };
 
-const logOpts = [1, 2, 3];
+const logOpts = [0, 1, 2];
 type logOptsType = typeof logOpts[number];
 
 export function log(

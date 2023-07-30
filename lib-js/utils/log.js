@@ -7,7 +7,7 @@ const casecolors = {
     fg: { "0": "", "1": "30", "2": "41" },
     bg: { "0": "", "1": "43", "2": "41" },
 };
-const logOpts = [1, 2, 3];
+const logOpts = [0, 1, 2];
 function log(logOpt, ...logMsg) {
     if (!global.logs)
         global.logs = {};
