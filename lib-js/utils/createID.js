@@ -1,13 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createID = void 0;
-function createID(length) {
-    let length_ = length ?? 5;
+const _1 = require(".");
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
+const usedIDs = [];
+function createID(length_, preventDuplicates_) {
+    let preventDuplicates = !(0, _1.isNullUndefined)(preventDuplicates_)
+        ? preventDuplicates_
+        : true;
+    let length = length_ ?? 5;
     let r = "";
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
-    for (let i = 0; i < length_; i++) {
-        r += chars.charAt(Math.floor(Math.random() * chars.length));
+    function actualCreateID() {
+        if (usedIDs.length >= (chars.length ^ length))
+            length++;
+        let r2 = "";
+        for (let i = 0; i < length; i++) {
+            r2 += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        if (preventDuplicates && usedIDs.includes(r2))
+            return actualCreateID();
+        usedIDs.push(r2);
+        r = r2;
     }
+    actualCreateID();
     return r;
 }
 exports.createID = createID;

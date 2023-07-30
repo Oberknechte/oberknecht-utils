@@ -1,1 +1,1 @@
-export declare function createID(length?: number): string;
+export declare function createID(length_?: number, preventDuplicates_?: boolean): string;
