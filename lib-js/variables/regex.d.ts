@@ -11,5 +11,6 @@ export declare class regex {
             action: () => RegExp;
         };
         usernamereg: () => RegExp;
+        tokenreg: () => RegExp;
     };
 }

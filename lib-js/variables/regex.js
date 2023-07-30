@@ -3,19 +3,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.regex = void 0;
 class regex {
     static numregex = () => {
-        return new RegExp(`^((\-)*[\\d]{1,})$`, "g");
+        return /^\-*[\d]{1,}$/;
     };
     static tokenreg = () => {
-        return new RegExp(`^\\b[\\w]{30}\\b$`, "g");
+        return /^\b\w{30}\b$/;
     };
     static jsonreg = () => {
-        return new RegExp(`^\\{+[\\W\\w]*\\}$`, "g");
+        return /^\{.*\}$/;
+        // /\{.*\:\{.*\:.*\}\}/
     };
     static urlreg = () => {
-        return new RegExp(`(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})`, "g");
+        return /^(https?:\/\/)*(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
     };
     static extraSpaceRegex = () => {
-        return new RegExp(`(^\\s|\\s$|\\s{2,})`, "g");
+        return /(^\s|\s$|\s{2,})/g;
     };
     static twitch = class {
         static message = class {
@@ -24,7 +25,10 @@ class regex {
             };
         };
         static usernamereg = () => {
-            return new RegExp(`\\b^[\\w]{1,32}$\\b`, "g");
+            return /^\w{1,32}$/;
+        };
+        static tokenreg = () => {
+            return /^\w{30}$/;
         };
     };
 }
