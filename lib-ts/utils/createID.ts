@@ -73,3 +73,21 @@ export function createID(
 
   return r;
 }
+
+Object.defineProperties(createID, {
+  patternIDs: {
+    get() {
+      return patternIDs;
+    },
+  },
+  userIDs: {
+    get() {
+      return usedIDs;
+    },
+  },
+  chars: {
+    get() {
+      return chars;
+    },
+  },
+});

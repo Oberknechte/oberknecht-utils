@@ -63,3 +63,20 @@ function createID(length, preventDuplicates, byPattern, patternID_, chars_) {
     return r;
 }
 exports.createID = createID;
+Object.defineProperties(createID, {
+    patternIDs: {
+        get() {
+            return patternIDs;
+        },
+    },
+    userIDs: {
+        get() {
+            return usedIDs;
+        },
+    },
+    chars: {
+        get() {
+            return chars;
+        },
+    },
+});
