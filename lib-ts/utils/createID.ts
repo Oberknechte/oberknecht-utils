@@ -1,5 +1,7 @@
 import { isNullUndefined } from ".";
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
+const defaultChars =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
+let chars = defaultChars;
 const usedIDs = [];
 let patternIDs = [];
 
@@ -7,7 +9,8 @@ export function createID(
   length?: number,
   preventDuplicates?: boolean,
   byPattern?: boolean,
-  patternID_?: number[]
+  patternID_?: number[],
+  chars_?: string
 ) {
   let preventDuplicates_ = !isNullUndefined(preventDuplicates)
     ? preventDuplicates
@@ -15,6 +18,7 @@ export function createID(
 
   let byPattern_ = !isNullUndefined(byPattern) ? byPattern : false;
   patternIDs = patternID_ ?? patternIDs;
+  chars = chars_ ?? defaultChars;
 
   let length_ = length ?? 5;
   let r = "";

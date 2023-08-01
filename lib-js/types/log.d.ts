@@ -29,5 +29,6 @@ export type logOptConfigType = {
     option?: number;
     logColorFG?: logColorValueType;
     logColorBG?: logColorValueType;
+    displayMS?: boolean;
 };
 export {};

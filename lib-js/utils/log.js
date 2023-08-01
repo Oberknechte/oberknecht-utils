@@ -20,6 +20,7 @@ function log(logOpt, ...logMsg) {
         option: logOptOption,
         logColorFG: logOpt?.logColorFG ?? casecolors.fg[logOptOption] ?? "0",
         logColorBG: logOpt?.logColorBG ?? casecolors.bg[logOptOption] ?? "0",
+        displayMS: logOpt?.displayMS ?? true,
     };
     let logMsg_ = [...logMsg];
     if (((0, _1.extendedTypeof)(logOpt) !== "json" ||
@@ -41,16 +42,15 @@ function log(logOpt, ...logMsg) {
                     return a?.replace(/\x1b\[[\w;]+m/g, "");
                 return a;
             }),
-            (0, _1.getDateParsed)(),
+            (0, _1.getDateParsed)(undefined, logOpt_.displayMS),
         ];
-    logOpt = logOpt ?? 0;
     const logcolorfg = `\x1b[${logOpt_.logColorFG}m`;
     const logcolorbg = `\x1b[${logOpt_.logColorBG}m`;
     const logm = [
-        `${logcolorbg}${logcolorfg} ${(0, _1.getDateParsed)()} \x1b[0m >`,
+        `${logcolorbg}${logcolorfg} ${(0, _1.getDateParsed)(undefined, logOpt_.displayMS)} \x1b[0m >`,
         ...logMsg_,
     ];
-    switch (logOpt) {
+    switch (logOptOption) {
         default:
         case 0:
             return console.log(...logm);

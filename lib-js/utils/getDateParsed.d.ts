@@ -1,1 +1,1 @@
-export declare function getDateParsed(date?: string | number | Date): string;
+export declare function getDateParsed(date?: string | number | Date, displayMS?: boolean): string;

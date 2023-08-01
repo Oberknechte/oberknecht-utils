@@ -2,15 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createID = void 0;
 const _1 = require(".");
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
+const defaultChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
+let chars = defaultChars;
 const usedIDs = [];
 let patternIDs = [];
-function createID(length, preventDuplicates, byPattern, patternID_) {
+function createID(length, preventDuplicates, byPattern, patternID_, chars_) {
     let preventDuplicates_ = !(0, _1.isNullUndefined)(preventDuplicates)
         ? preventDuplicates
         : true;
     let byPattern_ = !(0, _1.isNullUndefined)(byPattern) ? byPattern : false;
     patternIDs = patternID_ ?? patternIDs;
+    chars = chars_ ?? defaultChars;
     let length_ = length ?? 5;
     let r = "";
     function actualCreateID() {

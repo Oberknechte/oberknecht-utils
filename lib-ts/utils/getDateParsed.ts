@@ -1,4 +1,7 @@
-export function getDateParsed(date?: string | number | Date): string {
+export function getDateParsed(
+  date?: string | number | Date,
+  displayMS?: boolean
+): string {
   let date_ =
     date ??
     new Date(
@@ -8,5 +11,8 @@ export function getDateParsed(date?: string | number | Date): string {
     );
 
   let r = new Date(date_);
-  return r.toISOString().split(".")[0].replace("T", " ");
+  return r
+    .toISOString()
+    .split(displayMS ? "Z" : ".")[0]
+    .replace("T", " ");
 }
