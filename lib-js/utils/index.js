@@ -70,4 +70,5 @@ __exportStar(require("./getDateParsed"), exports);
 __exportStar(require("./returnOnType"), exports);
 __exportStar(require("./splitPixelize"), exports);
 __exportStar(require("./concatJSON"), exports);
+__exportStar(require("./removeArrayDuplicates"), exports);
 __exportStar(require("../variables/regex"), exports);

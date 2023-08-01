@@ -54,4 +54,5 @@ export * from "./getDateParsed";
 export * from "./returnOnType";
 export * from "./splitPixelize";
 export * from "./concatJSON";
+export * from "./removeArrayDuplicates";
 export * from "../variables/regex";
