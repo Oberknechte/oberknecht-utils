@@ -55,4 +55,6 @@ export * from "./returnOnType";
 export * from "./splitPixelize";
 export * from "./concatJSON";
 export * from "./removeArrayDuplicates";
+export * from "./pyramidCreator";
+export * from "./isEvan";
 export * from "../variables/regex";
