@@ -1,1 +1,1 @@
-export declare function createPyramid(n_: number, s: string): string;
+export declare function createPyramid(n_: number, s: string): string[];
