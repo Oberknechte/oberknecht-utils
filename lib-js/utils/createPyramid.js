@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.pyramidCreator = void 0;
-const _1 = require("./");
-function pyramidCreator(n_, s) {
+exports.createPyramid = void 0;
+const _1 = require(".");
+function createPyramid(n_, s) {
     let r = "";
     let n = (0, _1.isEvan)(n_) ? n_ + 1 : n_;
     let half = (0, _1.getFullNumber)(n / 2);
@@ -21,4 +21,4 @@ function pyramidCreator(n_, s) {
     }
     return r;
 }
-exports.pyramidCreator = pyramidCreator;
+exports.createPyramid = createPyramid;

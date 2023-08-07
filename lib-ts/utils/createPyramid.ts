@@ -1,6 +1,6 @@
-import { getFullNumber, isEvan } from "./";
+import { getFullNumber, isEvan } from ".";
 
-export function pyramidCreator(n_: number, s: string) {
+export function createPyramid(n_: number, s: string) {
   let r: string = "";
   let n = isEvan(n_) ? n_ + 1 : n_;
   let half = getFullNumber(n / 2);
