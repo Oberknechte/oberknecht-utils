@@ -58,4 +58,5 @@ export * from "./removeArrayDuplicates";
 export * from "./createPyramid";
 export * from "./isEvan";
 export * from "./stringModifiers";
+export * from "./arrayInsert";
 export * from "../variables/regex";

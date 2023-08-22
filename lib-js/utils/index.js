@@ -74,4 +74,5 @@ __exportStar(require("./removeArrayDuplicates"), exports);
 __exportStar(require("./createPyramid"), exports);
 __exportStar(require("./isEvan"), exports);
 __exportStar(require("./stringModifiers"), exports);
+__exportStar(require("./arrayInsert"), exports);
 __exportStar(require("../variables/regex"), exports);
