@@ -57,6 +57,7 @@ export * from "./concatJSON";
 export * from "./removeArrayDuplicates";
 export * from "./createPyramid";
 export * from "./isEvan";
-export * from "./stringModifiers";
 export * from "./arrayInsert";
+export * from "./stringModifiers";
+export * from "./arrayModifiers";
 export * from "../variables/regex";
