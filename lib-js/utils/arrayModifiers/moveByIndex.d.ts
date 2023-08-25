@@ -1,1 +1,1 @@
-export declare function moveByIndex(arr: any[], indexFirst: number, indexEnd: number, moveNumber?: number): any[];
+export declare function moveByIndex(arr: any[], indexFirst: number, indexEnd?: number | undefined, moveNumber?: number | undefined): any[];

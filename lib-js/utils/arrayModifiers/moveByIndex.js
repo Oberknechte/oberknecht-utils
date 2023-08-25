@@ -14,7 +14,6 @@ function moveByIndex(arr, indexFirst, indexEnd, moveNumber) {
     let r = (0, __1.recreate)(arr);
     let elem = arr[indexFirst];
     let arr_ = (0, splice_1.splice)(r, indexFirst);
-    console.log(elem, isPositiveDirection, arr_);
     r = [
         ...arr_.slice(0, isPositiveDirection ? indexFirst + 1 : indexEnd),
         elem,
