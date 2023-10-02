@@ -4,7 +4,7 @@ exports.cleanTime = void 0;
 const extendedTypeof_1 = require("./extendedTypeof");
 const pad2_1 = require("./pad2");
 const recreate_1 = require("./recreate");
-function cleanTime(time /** time in ms */, timeopt, timedigits, noMs) {
+function cleanTime(time /** time in ms */, timeopt, timedigits, noMS, noSpace) {
     let timedigits_ = (0, recreate_1.recreate)(timedigits);
     if (!(timedigits_ ?? undefined) ||
         (typeof timedigits_ !== "number" && timedigits_ !== "all") ||
@@ -13,27 +13,54 @@ function cleanTime(time /** time in ms */, timeopt, timedigits, noMs) {
     let r = { time: [], order: [], tag: "" };
     let t = {
         years: {
-            tag_: "yr",
+            tag3: "yr",
+            tag2: "yr",
             tag: "year",
             conversion: 365 * 24 * 60 * 60 * 1000,
             time: 0,
         },
         weeks: {
-            tag_: "wk",
+            tag3: "wk",
+            tag2: "wk",
             tag: "week",
             conversion: 7 * 24 * 60 * 60 * 1000,
             time: 0,
         },
         days: {
-            tag_: "day",
+            tag3: "d",
+            tag2: "day",
             tag: "day",
             conversion: 24 * 60 * 60 * 1000,
             time: 0,
         },
-        hours: { tag_: "hr", tag: "hour", conversion: 60 * 60 * 1000, time: 0 },
-        minutes: { tag_: "min", tag: "minute", conversion: 60 * 1000, time: 0 },
-        seconds: { tag_: "sec", tag: "second", conversion: 1000, time: 0 },
-        milliseconds: { tag_: "ms", tag: "millisecond", conversion: 1, time: 0 },
+        hours: {
+            tag3: "h",
+            tag2: "hr",
+            tag: "hour",
+            conversion: 60 * 60 * 1000,
+            time: 0,
+        },
+        minutes: {
+            tag3: "m",
+            tag2: "min",
+            tag: "minute",
+            conversion: 60 * 1000,
+            time: 0,
+        },
+        seconds: {
+            tag3: "s",
+            tag2: "sec",
+            tag: "second",
+            conversion: 1000,
+            time: 0,
+        },
+        milliseconds: {
+            tag3: "ms",
+            tag2: "ms",
+            tag: "millisecond",
+            conversion: 1,
+            time: 0,
+        },
     };
     t.milliseconds.time = time;
     for (let i = 0; i < Object.keys(t).length - 1; i++) {
@@ -48,7 +75,7 @@ function cleanTime(time /** time in ms */, timeopt, timedigits, noMs) {
         let tc = Object.keys(t)[i];
         let tco = t[tc];
         let cte = tco.time;
-        if (((i !== Object.keys(t).length - 1 || !noMs) &&
+        if (((i !== Object.keys(t).length - 1 || !noMS) &&
             ["auto"].includes(timedigits_) &&
             u < autonum) ||
             timedigits_ === "all" ||
@@ -65,11 +92,14 @@ function cleanTime(time /** time in ms */, timeopt, timedigits, noMs) {
                         break;
                     }
                     case 4:
-                    case 5: {
+                    case 5:
+                    case 6: {
                         if (cte > 0) {
-                            r["time"].push(`${cte} ${tco[["tag", "tag_"][timeopt - 4]] !== "ms"
-                                ? tco[["tag", "tag_"][timeopt - 4]] + (cte > 1 ? "s" : "")
-                                : tco[["tag", "tag_"][timeopt - 4]]}`);
+                            r["time"].push(`${cte} ${tco[["tag", "tag2", "tag3"][timeopt - 4]] !== "ms" &&
+                                timeopt - 4 !== 2
+                                ? tco[["tag", "tag2", "tag3"][timeopt - 4]] +
+                                    (cte > 1 ? "s" : "")
+                                : tco[["tag", "tag2", "tag3"][timeopt - 4]]}`);
                             r["order"].push(tc);
                         }
                         break;
@@ -85,6 +115,8 @@ function cleanTime(time /** time in ms */, timeopt, timedigits, noMs) {
             i = Object.keys(t).length;
         }
     }
+    if (r.time)
+        r.time = r.time.map((a) => (noSpace ? a.replace(/\s/g, "") : a));
     return r;
 }
 exports.cleanTime = cleanTime;
