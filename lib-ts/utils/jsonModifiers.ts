@@ -9,6 +9,7 @@ import {
   getKeyFromObject,
 } from ".";
 import { deleteKeysFromJSON } from "./jsonModifiers/deleteKeysFromJSON";
+import { renameKey } from "./jsonModifiers/renameKey";
 
 export class jsonModifiers {
   static addAppendKeysToObject = addAppendKeysToObject;
@@ -20,4 +21,5 @@ export class jsonModifiers {
   static getByObjectFromTree = getByObjectFromTree;
   static getKeyFromObject = getKeyFromObject;
   static deleteKeysFromJSON = deleteKeysFromJSON;
+  static renameKey = renameKey;
 }
