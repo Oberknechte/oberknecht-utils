@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logWeb = void 0;
-const convertToArray_1 = require("./convertToArray");
+const convertToArray_1 = require("./arrayModifiers/convertToArray");
 function logWeb(logopt, logmsg, logdecoration, logcolorfg, logcolorbg) {
     if (logopt && !logmsg) {
         logmsg = logopt;

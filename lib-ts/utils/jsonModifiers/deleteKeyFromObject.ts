@@ -1,4 +1,4 @@
-import { convertToArray, recreate } from ".";
+import { convertToArray, recreate } from "..";
 
 export function deleteKeyFromObject(
   object: Record<string, any>,

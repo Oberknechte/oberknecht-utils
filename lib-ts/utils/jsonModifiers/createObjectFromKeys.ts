@@ -1,4 +1,4 @@
-import { convertToArray } from ".";
+import { convertToArray } from "..";
 
 export function createObjectFromKeys(
   keys: string | string[],

@@ -1,4 +1,4 @@
-import { addKeysToObject, convertToArray, extendedTypeof } from ".";
+import { addKeysToObject, convertToArray, extendedTypeof } from "..";
 
 export function concatJSON(arr: Record<string, any>[]) {
   let arr_ = convertToArray(arr);

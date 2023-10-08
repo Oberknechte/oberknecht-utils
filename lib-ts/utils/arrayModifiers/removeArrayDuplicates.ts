@@ -1,4 +1,4 @@
-import { convertToArray } from "./";
+import { convertToArray } from "..";
 
 export function removeArrayDuplicates(arr: any[]): any[] {
   let r: any[] = [];

@@ -5,7 +5,7 @@ import {
   getKeyArraysFromObject,
   getKeyFromObject,
   recreate,
-} from ".";
+} from "..";
 
 export function addAppendKeysToObject(
   object: Record<string, any>,

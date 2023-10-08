@@ -1,4 +1,4 @@
-import { extendedTypeof } from "./extendedTypeof";
+import { extendedTypeof } from "../extendedTypeof";
 
 /** @see https://github.com/NuroC/moomoo-in-depth/tree/main/protocol#chunk-arrays */
 export function chunkArray(

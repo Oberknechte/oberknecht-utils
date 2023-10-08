@@ -1,5 +1,5 @@
-import { convertToArray } from "../convertToArray";
-import { deleteKeyFromObject } from "../deleteKeyFromObject";
+import { convertToArray } from "../arrayModifiers/convertToArray";
+import { deleteKeyFromObject } from "./deleteKeyFromObject";
 import { extendedTypeof } from "../extendedTypeof";
 
 export function deleteKeysFromJSON(o: Record<string, any>, keys: string[]) {

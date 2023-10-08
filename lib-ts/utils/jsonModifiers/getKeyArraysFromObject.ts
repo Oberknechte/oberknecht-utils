@@ -1,5 +1,5 @@
-import { getKeyArraysFromObjectReturn } from "../types/getKeyArraysFromObject";
-import { extendedTypeof } from ".";
+import { getKeyArraysFromObjectReturn } from "../../types/getKeyArraysFromObject";
+import { extendedTypeof } from "..";
 
 export function getKeyArraysFromObject(
   object: Record<string, any>

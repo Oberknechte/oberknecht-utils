@@ -1,4 +1,4 @@
-import { convertToArray, recreate, extendedTypeof } from ".";
+import { convertToArray, recreate, extendedTypeof } from "..";
 
 export function addKeysToObject(
   object: Record<string, any>,

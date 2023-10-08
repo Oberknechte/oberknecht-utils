@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.returnOnNumber = void 0;
-const convertToArray_1 = require("./convertToArray");
+const convertToArray_1 = require("./arrayModifiers/convertToArray");
 const extendedTypeof_1 = require("./extendedTypeof");
 const isNullUndefined_1 = require("./isNullUndefined");
 function returnOnNumber(input, targetNumber, returnOnGreater, returnOnGreaterEquals, returnOnSmaller, returnOnSmallerEquals, returnDefault) {

@@ -1,4 +1,4 @@
-import { convertToArray } from "./convertToArray";
+import { convertToArray } from "./arrayModifiers/convertToArray";
 
 export function logWeb(
   logopt: string | number,

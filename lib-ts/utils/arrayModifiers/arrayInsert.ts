@@ -1,4 +1,4 @@
-import { extendedTypeof } from "./";
+import { extendedTypeof } from "..";
 
 export class arrayInsert {
   static insertBefore = (arr: any[], beforeElement: any, elem: any): any[] => {

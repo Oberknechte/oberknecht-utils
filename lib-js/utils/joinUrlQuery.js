@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.joinUrlQuery = void 0;
-const convertToArray_1 = require("./convertToArray");
+const convertToArray_1 = require("./arrayModifiers/convertToArray");
 function joinUrlQuery(queryname, queryparams, firstquery, appendifempty) {
     let queryname_ = (0, convertToArray_1.convertToArray)(queryname, false);
     let queryparams_ = (0, convertToArray_1.convertToArray)(queryparams, false);

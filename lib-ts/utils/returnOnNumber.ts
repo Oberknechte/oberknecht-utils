@@ -1,4 +1,4 @@
-import { convertToArray } from "./convertToArray";
+import { convertToArray } from "./arrayModifiers/convertToArray";
 import { extendedTypeof } from "./extendedTypeof";
 import { isNullUndefined } from "./isNullUndefined";
 

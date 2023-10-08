@@ -1,4 +1,4 @@
-import { convertToArray } from "./convertToArray";
+import { convertToArray } from "./arrayModifiers/convertToArray";
 
 export function joinUrlQuery(
   queryname: string | Array<string>,

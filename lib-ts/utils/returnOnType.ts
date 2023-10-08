@@ -1,6 +1,6 @@
 import { extendedTypes } from "../types/extendedTypes";
 import { extendedTypeof } from "./extendedTypeof";
-import { convertToArray } from "./convertToArray";
+import { convertToArray } from "./arrayModifiers/convertToArray";
 
 export function returnOnType<
   returnIfTypeInput extends any,

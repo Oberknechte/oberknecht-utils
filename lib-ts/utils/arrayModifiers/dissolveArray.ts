@@ -1,5 +1,5 @@
 import { convertToArray } from "./convertToArray";
-import { extendedTypeof } from "./extendedTypeof";
+import { extendedTypeof } from "../extendedTypeof";
 
 type arrTypeReturn<T> = T extends any[] ? any : T;
 

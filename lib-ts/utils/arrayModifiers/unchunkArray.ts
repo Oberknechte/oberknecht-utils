@@ -1,4 +1,4 @@
-import { extendedTypeof } from "./extendedTypeof";
+import { extendedTypeof } from "../extendedTypeof";
 
 /** @see https://github.com/NuroC/moomoo-in-depth/tree/main/protocol#unchunk-arrays */
 export function unchunkArray(arr: Array<Array<any>>): Array<any> {
