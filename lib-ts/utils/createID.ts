@@ -2,7 +2,7 @@ import { isNullUndefined } from ".";
 const defaultChars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
 let chars = defaultChars;
-const usedIDs = [];
+let usedIDs = [];
 let patternIDs = [];
 
 export function createID(
@@ -10,7 +10,8 @@ export function createID(
   preventDuplicates?: boolean,
   byPattern?: boolean,
   patternID_?: number[],
-  chars_?: string
+  chars_?: string,
+  usedIDs_?: string[]
 ) {
   let preventDuplicates_ = !isNullUndefined(preventDuplicates)
     ? preventDuplicates
@@ -19,12 +20,13 @@ export function createID(
   let byPattern_ = !isNullUndefined(byPattern) ? byPattern : false;
   patternIDs = patternID_ ?? patternIDs;
   chars = chars_ ?? defaultChars;
+  usedIDs = usedIDs_ ?? usedIDs;
 
   let length_ = length ?? 5;
   let r = "";
 
   function actualCreateID() {
-    if (usedIDs.length >= (chars.length ^ length_)) length_++;
+    if (usedIDs.length > (chars.length ^ length_)) length_++;
 
     let r2 = "";
     for (let i = 0; i < length_; i++) {
@@ -80,7 +82,7 @@ Object.defineProperties(createID, {
       return patternIDs;
     },
   },
-  userIDs: {
+  usedIDs: {
     get() {
       return usedIDs;
     },
