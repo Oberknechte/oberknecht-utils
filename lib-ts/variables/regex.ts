@@ -12,6 +12,9 @@ export class regex {
   static urlreg = () => {
     return /^(https?:\/\/)*(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
   };
+  static urlreg_ = () => {
+    return /(https?:\/\/)*(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)/g;
+  };
   static extraSpaceRegex = () => {
     return /(^\s|\s$|\s{2,})/g;
   };

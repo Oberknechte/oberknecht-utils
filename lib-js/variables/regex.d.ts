@@ -3,6 +3,7 @@ export declare class regex {
     static tokenreg: () => RegExp;
     static jsonreg: () => RegExp;
     static urlreg: () => RegExp;
+    static urlreg_: () => RegExp;
     static extraSpaceRegex: () => RegExp;
     static twitch: {
         new (): {};
