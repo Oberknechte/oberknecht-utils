@@ -1,1 +1,1 @@
-export declare function mainPath(dir: string): string;
+export declare function mainPath(dir?: string[] | string): string;
