@@ -1,7 +1,6 @@
 import { isNullUndefined } from "..";
 import { recreate } from "../recreate";
 
-// export function convertToArray(arr: Array<any> | any, returnundefined?: boolean | any) {
 export function convertToArray<returnundefinedBoolean extends boolean>(
   arr: Array<any> | any,
   returnundefined?: returnundefinedBoolean | undefined
