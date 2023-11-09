@@ -75,7 +75,7 @@ function cleanTime(time /** time in ms */, timeopt, timedigits, noMS, noSpace) {
         let tc = Object.keys(t)[i];
         let tco = t[tc];
         let cte = tco.time;
-        if (((i !== Object.keys(t).length - 1 || !noMS) &&
+        if (((i > Object.keys(t).length - 1 || !noMS) &&
             ["auto"].includes(timedigits_) &&
             u < autonum) ||
             timedigits_ === "all" ||

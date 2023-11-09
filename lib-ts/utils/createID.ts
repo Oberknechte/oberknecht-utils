@@ -1,4 +1,4 @@
-import { isNullUndefined } from ".";
+import { extendedTypeof, isNullUndefined } from ".";
 const defaultChars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
 let chars = defaultChars;
@@ -18,23 +18,24 @@ export function createID(
     : true;
 
   let byPattern_ = !isNullUndefined(byPattern) ? byPattern : false;
-  patternIDs = patternID_ ?? patternIDs;
-  chars = chars_ ?? defaultChars;
-  usedIDs = usedIDs_ ?? usedIDs;
+  patternIDs = extendedTypeof(patternID_) === "array" ? patternID_ : patternIDs;
+  chars = extendedTypeof(chars_) === "string" ? chars_ : defaultChars;
+  usedIDs = extendedTypeof(usedIDs_) === "array" ? usedIDs_ : usedIDs;
 
   let length_ = length ?? 5;
   let r = "";
 
   function actualCreateID() {
-    if (usedIDs.length > (chars.length ^ length_)) length_++;
+    if ((usedIDs?.length ?? 0) > (chars.length ^ length_)) length_++;
 
     let r2 = "";
     for (let i = 0; i < length_; i++) {
       r2 += chars.charAt(Math.floor(Math.random() * chars.length));
     }
 
-    if (preventDuplicates_ && usedIDs.includes(r2)) return actualCreateID();
-    if (!usedIDs.includes(r2)) usedIDs.push(r2);
+    if (extendedTypeof(usedIDs) !== "array") usedIDs = [];
+    if (preventDuplicates_ && usedIDs?.includes(r2)) return actualCreateID();
+    if (!usedIDs?.includes(r2)) usedIDs?.push(r2);
     r = r2;
   }
 

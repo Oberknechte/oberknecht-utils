@@ -7,7 +7,7 @@ export function getKeyArraysFromObject(
   let r: getKeyArraysFromObjectReturn = [];
 
   function go(o2: Record<string, any>, arr: string[]) {
-    Object.keys(o2).forEach((a) => {
+    Object.keys(o2 ?? {})?.forEach((a) => {
       if (
         extendedTypeof(o2[a]) === "json" &&
         (Object.keys(o2[a]).length ?? 0) > 0

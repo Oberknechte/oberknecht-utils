@@ -86,7 +86,7 @@ export function cleanTime(
     let tco = t[tc];
     let cte: number = tco.time;
     if (
-      ((i !== Object.keys(t).length - 1 || !noMS) &&
+      ((i > Object.keys(t).length - 1 || !noMS) &&
         ["auto"].includes(timedigits_) &&
         u < autonum) ||
       timedigits_ === "all" ||
