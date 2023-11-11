@@ -1,1 +1,0 @@
-export declare function convertToArray<returnundefinedBoolean extends boolean>(arr: Array<any> | any, returnundefined?: returnundefinedBoolean | undefined): returnundefinedBoolean extends true ? Array<any> | undefined : Array<any>;
