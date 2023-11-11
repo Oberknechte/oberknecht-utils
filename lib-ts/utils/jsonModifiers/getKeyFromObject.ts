@@ -3,9 +3,10 @@ import { convertToArray } from "..";
 export function getKeyFromObject(
   object: Record<string, any>,
   keys: string | string[],
-  throwErr?: boolean
+  throwErr?: boolean,
+  noRecreate?: boolean
 ): any {
-  let keys_ = convertToArray(keys, false);
+  let keys_ = convertToArray(keys, false, noRecreate);
   let value = object;
   for (let i = 0; i < keys_.length; i++) {
     if (value.hasOwnProperty(keys_[i])) {
