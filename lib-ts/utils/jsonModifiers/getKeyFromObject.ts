@@ -9,7 +9,7 @@ export function getKeyFromObject(
   let keys_ = convertToArray(keys, false, noRecreate);
   let value = object;
   for (let i = 0; i < keys_.length; i++) {
-    if (value.hasOwnProperty(keys_[i])) {
+    if (value?.hasOwnProperty?.(keys_[i])) {
       value = value[keys_[i]];
     } else {
       let err = Error(`key ${keys_[i]} not in value`);

@@ -6,7 +6,7 @@ function getKeyFromObject(object, keys, throwErr, noRecreate) {
     let keys_ = (0, __1.convertToArray)(keys, false, noRecreate);
     let value = object;
     for (let i = 0; i < keys_.length; i++) {
-        if (value.hasOwnProperty(keys_[i])) {
+        if (value?.hasOwnProperty?.(keys_[i])) {
             value = value[keys_[i]];
         }
         else {
