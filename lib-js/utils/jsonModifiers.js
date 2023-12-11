@@ -15,5 +15,6 @@ class jsonModifiers {
     static getKeyFromObject = _1.getKeyFromObject;
     static deleteKeysFromJSON = deleteKeysFromJSON_1.deleteKeysFromJSON;
     static renameKey = renameKey_1.renameKey;
+    static filterByKeys = _1.filterByKeys;
 }
 exports.jsonModifiers = jsonModifiers;

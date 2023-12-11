@@ -67,6 +67,7 @@ __exportStar(require("./jsonModifiers/addKeysToObject"), exports);
 __exportStar(require("./jsonModifiers/addAppendKeysToObject"), exports);
 __exportStar(require("./jsonModifiers/deleteKeysFromJSON"), exports);
 __exportStar(require("./jsonModifiers/renameKey"), exports);
+__exportStar(require("./jsonModifiers/filterByKeys"), exports);
 __exportStar(require("./getFunctionArgumentNames"), exports);
 __exportStar(require("./getDateParsed"), exports);
 __exportStar(require("./returnOnType"), exports);
