@@ -1,5 +1,5 @@
-export declare type getKeyArraysFromObjectEntry = {
+export type getKeyArraysFromObjectEntry = {
     path: string[];
     value: any;
 };
-export declare type getKeyArraysFromObjectReturn = getKeyArraysFromObjectEntry[];
+export type getKeyArraysFromObjectReturn = getKeyArraysFromObjectEntry[];
