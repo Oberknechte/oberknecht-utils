@@ -7,7 +7,8 @@ function filterByTypes(object, typeObject, filterNotInTypeObject) {
     Object.keys(object).forEach((a) => {
         if (!typeObject[a] && filterNotInTypeObject)
             return;
-        if (typeObject[a] && (0, __1.extendedTypeof)(object[a]) !== typeObject[a])
+        if (typeObject[a] &&
+            !(0, __1.convertToArray)(typeObject[a]).includes((0, __1.extendedTypeof)(object[a])))
             return;
         object_[a] = object[a];
     });
