@@ -4,12 +4,12 @@ import { isNullUndefined } from "./isNullUndefined";
 
 export function returnOnNumber(
   input: string | Array<any> | Object | number | bigint,
-  targetNumber: number,
-  returnOnGreater: any,
-  returnOnGreaterEquals: any,
-  returnOnSmaller: any,
-  returnOnSmallerEquals: any,
-  returnDefault: any
+  targetNumber?: number,
+  returnOnGreater?: any,
+  returnOnGreaterEquals?: any,
+  returnOnSmaller?: any,
+  returnOnSmallerEquals?: any,
+  returnDefault?: any
 ): any {
   if (["null", "undefined"].includes(extendedTypeof(input))) return undefined;
   targetNumber = isNullUndefined(extendedTypeof(targetNumber))
