@@ -81,4 +81,6 @@ __exportStar(require("./arrayModifiers/arrayInsert"), exports);
 __exportStar(require("./stringModifiers"), exports);
 __exportStar(require("./arrayModifiers"), exports);
 __exportStar(require("./jsonModifiers"), exports);
+__exportStar(require("./regexGenerator"), exports);
+__exportStar(require("./getVariableName"), exports);
 __exportStar(require("../variables/regex"), exports);

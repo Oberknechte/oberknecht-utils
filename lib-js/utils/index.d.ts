@@ -65,4 +65,6 @@ export * from "./arrayModifiers/arrayInsert";
 export * from "./stringModifiers";
 export * from "./arrayModifiers";
 export * from "./jsonModifiers";
+export * from "./regexGenerator";
+export * from "./getVariableName";
 export * from "../variables/regex";

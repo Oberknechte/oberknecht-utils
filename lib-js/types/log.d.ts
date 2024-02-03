@@ -24,8 +24,8 @@ export declare const logColors: {
     readonly bgwhite: "47";
 };
 export declare const logColorValues: ("0" | "1" | "2" | "4" | "5" | "7" | "8" | "33" | "34" | "35" | "36" | "37" | "40" | "41" | "42" | "43" | "44" | "45" | "46" | "47" | "30" | "31" | "32")[];
-declare type logColorValueType = typeof logColorValues[number];
-export declare type logOptConfigType = {
+type logColorValueType = typeof logColorValues[number];
+export type logOptConfigType = {
     option?: number;
     logColorFG?: logColorValueType;
     logColorBG?: logColorValueType;
