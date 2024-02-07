@@ -5,7 +5,7 @@ const recreate_1 = require("./recreate");
 function cleanChannelName(channel) {
     if (!(channel ?? undefined))
         return undefined;
-    return (0, recreate_1.recreate)(channel.toString()).trim().replace(/^#/g, "");
+    return (0, recreate_1.recreate)(channel.toString().toLowerCase()).trim().replace(/^#/g, "");
 }
 exports.cleanChannelName = cleanChannelName;
 ;
