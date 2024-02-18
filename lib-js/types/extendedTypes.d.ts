@@ -1,1 +1,1 @@
-export type extendedTypes = "array" | "json" | "null" | "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";
+export declare type extendedTypes = "array" | "json" | "null" | "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";

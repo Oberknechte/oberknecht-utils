@@ -1,10 +1,8 @@
 import {
   addKeysToObject,
   convertToArray,
-  extendedTypeof,
-  getKeyArraysFromObject,
   getKeyFromObject,
-  recreate,
+  joinValues,
 } from "..";
 
 export function addAppendKeysToObject(
@@ -17,28 +15,8 @@ export function addAppendKeysToObject(
 
   let oldvalue = getKeyFromObject(object_, keys_);
   let newvalue = oldvalue ?? value;
-  switch (extendedTypeof(oldvalue)) {
-    case "json": {
-      let jsonpaths = getKeyArraysFromObject(value);
-      jsonpaths.forEach((a) => {
-        addKeysToObject(newvalue, a.path, a.value);
-      });
 
-      break;
-    }
-
-    case "array": {
-      newvalue.push(...convertToArray(value, false));
-      break;
-    }
-
-    case "string":
-    case "number":
-    case "bigint": {
-      newvalue += value;
-      break;
-    }
-  }
+  newvalue = joinValues([newvalue, value], true);
 
   addKeysToObject(object_, keys_, newvalue);
 

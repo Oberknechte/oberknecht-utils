@@ -67,4 +67,5 @@ export * from "./arrayModifiers";
 export * from "./jsonModifiers";
 export * from "./regexGenerator";
 export * from "./getVariableName";
+export * from "./joinValues";
 export * from "../variables/regex";

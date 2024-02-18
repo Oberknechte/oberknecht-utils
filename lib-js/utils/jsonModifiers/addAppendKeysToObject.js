@@ -7,25 +7,7 @@ function addAppendKeysToObject(object, keys, value) {
     let keys_ = (0, __1.convertToArray)(keys, false);
     let oldvalue = (0, __1.getKeyFromObject)(object_, keys_);
     let newvalue = oldvalue ?? value;
-    switch ((0, __1.extendedTypeof)(oldvalue)) {
-        case "json": {
-            let jsonpaths = (0, __1.getKeyArraysFromObject)(value);
-            jsonpaths.forEach((a) => {
-                (0, __1.addKeysToObject)(newvalue, a.path, a.value);
-            });
-            break;
-        }
-        case "array": {
-            newvalue.push(...(0, __1.convertToArray)(value, false));
-            break;
-        }
-        case "string":
-        case "number":
-        case "bigint": {
-            newvalue += value;
-            break;
-        }
-    }
+    newvalue = (0, __1.joinValues)([newvalue, value], true);
     (0, __1.addKeysToObject)(object_, keys_, newvalue);
     return object_;
 }
