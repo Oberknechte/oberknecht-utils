@@ -2,10 +2,10 @@ import { convertToArray } from "./arrayModifiers/convertToArray";
 
 export function logWeb(
   logopt: string | number,
-  logmsg: string | number | null,
-  logdecoration?: string,
-  logcolorfg?: string,
-  logcolorbg?: string
+  logmsg: string | number | null | any[],
+  logdecoration?: string | any[],
+  logcolorfg?: string | any[],
+  logcolorbg?: string | any[]
 ): void {
   if (logopt && !logmsg) {
     logmsg = logopt;
