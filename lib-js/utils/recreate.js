@@ -16,8 +16,13 @@ function recreate(inp) {
                     return inp.cloneNode(true);
             }
             catch (nothin) { }
-            if (regex_1.regex.jsonreg().test(JSON.stringify(inp)))
-                return { ...inp };
+            if (regex_1.regex.jsonreg().test(JSON.stringify(inp))) {
+                let r = {};
+                Object.keys(inp).forEach((key) => {
+                    r[key] = recreate(inp[key]);
+                });
+                return r;
+            }
             return Object.assign({}, inp);
         }
         case "string":

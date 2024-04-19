@@ -11,7 +11,14 @@ export function recreate(inp: any): any {
       try {
         if (inp instanceof HTMLElement) return inp.cloneNode(true);
       } catch (nothin) {}
-      if (regex.jsonreg().test(JSON.stringify(inp))) return { ...inp };
+      if (regex.jsonreg().test(JSON.stringify(inp))) {
+        let r = {};
+        Object.keys(inp).forEach((key) => {
+          r[key] = recreate(inp[key]);
+        });
+
+        return r;
+      }
       return Object.assign({}, inp);
     }
     case "string":

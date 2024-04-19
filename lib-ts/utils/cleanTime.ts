@@ -8,7 +8,7 @@ export function cleanTime(
   timedigits?: number | "all" | "auto",
   noMS?: boolean,
   noSpace?: boolean
-): {} {
+): Record<string, any> {
   let timedigits_ = recreate(timedigits);
   if (
     !(timedigits_ ?? undefined) ||
