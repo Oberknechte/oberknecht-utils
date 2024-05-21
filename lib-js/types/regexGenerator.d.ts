@@ -1,3 +1,3 @@
-export type regexGeneratorOptions = {
+export declare type regexGeneratorOptions = {
     charGroupReplacement?: string;
 };

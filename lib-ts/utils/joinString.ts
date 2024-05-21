@@ -1,7 +1,7 @@
 import { dissolveArray, regexEscape } from ".";
 
 export function joinString(
-  pathParts: string | number | Array<string | number>,
+  pathParts: string | number | any[],
   joiner?: string,
   noreplace?: boolean,
   replaceStart?: boolean,

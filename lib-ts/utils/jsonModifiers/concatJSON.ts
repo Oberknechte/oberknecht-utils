@@ -9,7 +9,7 @@ import { extendedTypes } from "../../types/extendedTypes";
 export function concatJSON(
   arr: Record<string, any>[],
   addAppendTypes?: true | extendedTypes | extendedTypes[],
-  typesOverride?: boolean
+  typesOverride?: boolean,
 ) {
   let arr_ = convertToArray(arr);
   let r = {};
