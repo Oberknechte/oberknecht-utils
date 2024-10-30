@@ -18,9 +18,8 @@ function log(logOpt, ...logMsg) {
         global: logOpt?.global ?? false,
     };
     let logMsg_ = [...logMsg];
-    if (logOpt_.global &&
-        ((0, _1.extendedTypeof)(logOpt) !== "json" ||
-            (!logOpt.option && !logOpt.logColorFG && !logOpt.logColorBG)) &&
+    if (((0, _1.extendedTypeof)(logOpt) !== "json" ||
+        (!logOpt.option && !logOpt.logColorFG && !logOpt.logColorBG)) &&
         !logOpts.includes(logOpt))
         logMsg_.unshift(logOpt);
     if (logOpt_.global)

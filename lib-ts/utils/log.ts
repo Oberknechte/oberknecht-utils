@@ -28,7 +28,6 @@ export function log(
   let logMsg_ = [...logMsg];
 
   if (
-    logOpt_.global &&
     (extendedTypeof(logOpt) !== "json" ||
       (!logOpt.option && !logOpt.logColorFG && !logOpt.logColorBG)) &&
     !logOpts.includes(logOpt)
