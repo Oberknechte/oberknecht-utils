@@ -30,5 +30,6 @@ export declare type logOptConfigType = {
     logColorFG?: logColorValueType;
     logColorBG?: logColorValueType;
     displayMS?: boolean;
+    global?: boolean;
 };
 export {};
