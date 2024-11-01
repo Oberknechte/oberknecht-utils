@@ -84,4 +84,5 @@ __exportStar(require("./jsonModifiers"), exports);
 __exportStar(require("./regexGenerator"), exports);
 __exportStar(require("./getVariableName"), exports);
 __exportStar(require("./joinValues"), exports);
+__exportStar(require("./matchStrings"), exports);
 __exportStar(require("../variables/regex"), exports);

@@ -72,4 +72,6 @@ export * from "./regexGenerator";
 export * from "./getVariableName";
 export * from "./joinValues";
 
+export * from "./matchStrings";
+
 export * from "../variables/regex";
