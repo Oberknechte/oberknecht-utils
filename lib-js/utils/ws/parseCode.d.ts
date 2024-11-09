@@ -1,1 +1,1 @@
-export default function parseCode(code: number): string;
+export declare function parseCode(code: number): string;

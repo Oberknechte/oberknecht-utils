@@ -1,4 +1,4 @@
-export default function parseCode(code: number) {
+export function parseCode(code: number) {
   let reason = "";
   switch (code) {
     case 1000:

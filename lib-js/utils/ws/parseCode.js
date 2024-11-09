@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseCode = void 0;
 function parseCode(code) {
     let reason = "";
     switch (code) {
@@ -59,4 +60,4 @@ function parseCode(code) {
     }
     return reason;
 }
-exports.default = parseCode;
+exports.parseCode = parseCode;
