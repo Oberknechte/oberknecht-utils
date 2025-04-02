@@ -2,11 +2,11 @@ import { extendedTypeof, staticSpacer } from ".";
 
 export type stackNameReturnType = [string, string[], string[], string];
 
-export function stackName(): stackNameReturnType {
-  let opt = [...arguments][0];
+export function stackName(...args): stackNameReturnType {
+  let opt = args[0];
   let staticSpacerWidth =
-    extendedTypeof([...arguments][1]) === "number" ? [...arguments][1] : 2;
-  let args = [...arguments];
+    extendedTypeof(args[1]) === "number" ? args[1] : 2;
+  // let args = [...arguments];
   if ((opt ?? undefined) && !isNaN(opt)) args.shift();
   if (staticSpacerWidth === [...arguments][1]) args.shift();
 

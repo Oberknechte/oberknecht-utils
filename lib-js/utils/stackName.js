@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.stackName = void 0;
 const _1 = require(".");
-function stackName() {
-    let opt = [...arguments][0];
-    let staticSpacerWidth = (0, _1.extendedTypeof)([...arguments][1]) === "number" ? [...arguments][1] : 2;
-    let args = [...arguments];
+function stackName(...args) {
+    let opt = args[0];
+    let staticSpacerWidth = (0, _1.extendedTypeof)(args[1]) === "number" ? args[1] : 2;
+    // let args = [...arguments];
     if ((opt ?? undefined) && !isNaN(opt))
         args.shift();
     if (staticSpacerWidth === [...arguments][1])
