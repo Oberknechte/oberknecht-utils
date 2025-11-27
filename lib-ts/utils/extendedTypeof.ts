@@ -29,6 +29,7 @@ export const extendedType_Number = Symbol("number");
 export const extendedType_String = Symbol("string");
 export const extendedType_Symbol = Symbol("symbol");
 export const extendedType_Undefined = Symbol("undefined");
+export const extendedType_Object = Symbol("object");
 
 export function extendedTypeofCustom(item: any): extendedTypes | Symbol {
   let type = typeof item;
@@ -42,6 +43,8 @@ export function extendedTypeofCustom(item: any): extendedTypes | Symbol {
           return extendedType_JSON;
       } catch (e) {}
       if (item === null) return extendedType_Null;
+
+      return extendedType_Object;
     }
 
     case "bigint":
@@ -64,5 +67,8 @@ export function extendedTypeofCustom(item: any): extendedTypes | Symbol {
 
     case "undefined":
       return extendedType_Undefined;
+
+    default:
+      return undefined;
   }
 }

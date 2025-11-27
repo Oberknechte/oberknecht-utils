@@ -9,6 +9,7 @@ import {
   getKeyFromObject,
   filterByKeys,
   filterByTypes,
+  filterByJson,
 } from ".";
 import { deleteKeysFromJSON } from "./jsonModifiers/deleteKeysFromJSON";
 import { renameKey } from "./jsonModifiers/renameKey";
@@ -26,4 +27,5 @@ export class jsonModifiers {
   static renameKey = renameKey;
   static filterByKeys = filterByKeys;
   static filterByTypes = filterByTypes;
+  static filterByJson = filterByJson;
 }

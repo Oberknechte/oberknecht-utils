@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.extendedTypeofCustom = exports.extendedType_Undefined = exports.extendedType_Symbol = exports.extendedType_String = exports.extendedType_Number = exports.extendedType_Function = exports.extendedType_Boolean = exports.extendedType_Bigint = exports.extendedType_Null = exports.extendedType_Array = exports.extendedType_JSON = exports.extendedTypeof = void 0;
+exports.extendedTypeofCustom = exports.extendedType_Object = exports.extendedType_Undefined = exports.extendedType_Symbol = exports.extendedType_String = exports.extendedType_Number = exports.extendedType_Function = exports.extendedType_Boolean = exports.extendedType_Bigint = exports.extendedType_Null = exports.extendedType_Array = exports.extendedType_JSON = exports.extendedTypeof = void 0;
 const regex_1 = require("../variables/regex");
 function extendedTypeof(item) {
     let type = typeof item;
@@ -33,6 +33,7 @@ exports.extendedType_Number = Symbol("number");
 exports.extendedType_String = Symbol("string");
 exports.extendedType_Symbol = Symbol("symbol");
 exports.extendedType_Undefined = Symbol("undefined");
+exports.extendedType_Object = Symbol("object");
 function extendedTypeofCustom(item) {
     let type = typeof item;
     switch (type) {
@@ -48,6 +49,7 @@ function extendedTypeofCustom(item) {
             catch (e) { }
             if (item === null)
                 return exports.extendedType_Null;
+            return exports.extendedType_Object;
         }
         case "bigint":
             return exports.extendedType_Bigint;
@@ -63,6 +65,8 @@ function extendedTypeofCustom(item) {
             return exports.extendedType_Symbol;
         case "undefined":
             return exports.extendedType_Undefined;
+        default:
+            return undefined;
     }
 }
 exports.extendedTypeofCustom = extendedTypeofCustom;

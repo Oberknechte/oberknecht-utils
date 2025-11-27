@@ -1,4 +1,9 @@
-import { extendedTypeof, extendedTypeofCustom } from "../extendedTypeof";
+import {
+  extendedType_String,
+  extendedType_Symbol,
+  extendedTypeof,
+  extendedTypeofCustom,
+} from "../extendedTypeof";
 import { addKeysToObject } from "./addKeysToObject";
 
 export function filterByJson(
@@ -10,29 +15,50 @@ export function filterByJson(
 
   function _filter(
     obj_: Record<string, any>,
-    targetObj_: Record<string, any>,
+    targetObj_: Record<string | symbol, any>,
     currentPath: Array<string>
   ) {
-    Object.keys(targetObj_).forEach((key) => {
-      if (obj_[key] === undefined) return;
+    if (Object.keys(targetObj_).length === 0) {
+      [extendedType_String, extendedType_Symbol].forEach((a) => {
+        if (targetObj_[a] !== undefined) {
+          Object.keys(obj_).forEach((key) => {
+            if (extendedTypeofCustom(key) !== a) return;
+            _filter(obj_[key], targetObj_[a], [...currentPath, key]);
+          });
+        }
+      });
+    } else {
+      Object.keys(targetObj_).forEach((key, i) => {
+        let key_: string = "";
+        if (typeof key === "symbol") {
+          if (extendedTypeofCustom(obj_[key]) !== key) return;
+          key_ = Object.keys(obj_)[i];
+        } else if (obj_[key] === undefined) {
+          return;
+        } else {
+          key_ = key;
+        }
 
-      if (extendedTypeof(targetObj_[key]) === "json") {
-        if (extendedTypeof(obj_[key]) !== "json") return;
+        if (key_.length === 0) return console.log("length 0");
 
-        addKeysToObject(
-          r,
-          [...currentPath, key],
-          Array.isArray(obj_[key]) ? [] : {}
-        );
-        _filter(obj_[key], targetObj_[key], [...currentPath, key]);
-      } else if (
-        useExtendedTypes
-          ? targetObj_[key] === extendedTypeofCustom(obj_[key])
-          : extendedTypeof(targetObj_[key]) === extendedTypeof(obj_[key])
-      ) {
-        addKeysToObject(r, [...currentPath, key], obj_[key]);
-      }
-    });
+        if (extendedTypeof(targetObj_[key]) === "json") {
+          if (extendedTypeof(obj_[key]) !== "json") return;
+
+          addKeysToObject(
+            r,
+            [...currentPath, key],
+            Array.isArray(obj_[key]) ? [] : {}
+          );
+          _filter(obj_[key], targetObj_[key], [...currentPath, key]);
+        } else if (
+          useExtendedTypes
+            ? targetObj_[key] === extendedTypeofCustom(obj_[key])
+            : extendedTypeof(targetObj_[key]) === extendedTypeof(obj_[key])
+        ) {
+          addKeysToObject(r, [...currentPath, key], obj_[key]);
+        }
+      });
+    }
   }
 
   _filter(object, targetObject, []);

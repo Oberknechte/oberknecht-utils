@@ -1,4 +1,4 @@
-import { addAppendKeysToObject, addKeysToObject, concatJSON, createObjectFromKeys, deleteKeyFromObject, getAllObjectKeysTree, getByObjectFromTree, getKeyFromObject, filterByKeys, filterByTypes } from ".";
+import { addAppendKeysToObject, addKeysToObject, concatJSON, createObjectFromKeys, deleteKeyFromObject, getAllObjectKeysTree, getByObjectFromTree, getKeyFromObject, filterByKeys, filterByTypes, filterByJson } from ".";
 import { deleteKeysFromJSON } from "./jsonModifiers/deleteKeysFromJSON";
 import { renameKey } from "./jsonModifiers/renameKey";
 export declare class jsonModifiers {
@@ -14,4 +14,5 @@ export declare class jsonModifiers {
     static renameKey: typeof renameKey;
     static filterByKeys: typeof filterByKeys;
     static filterByTypes: typeof filterByTypes;
+    static filterByJson: typeof filterByJson;
 }

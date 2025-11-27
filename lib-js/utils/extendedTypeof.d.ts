@@ -10,4 +10,5 @@ export declare const extendedType_Number: unique symbol;
 export declare const extendedType_String: unique symbol;
 export declare const extendedType_Symbol: unique symbol;
 export declare const extendedType_Undefined: unique symbol;
+export declare const extendedType_Object: unique symbol;
 export declare function extendedTypeofCustom(item: any): extendedTypes | Symbol;
