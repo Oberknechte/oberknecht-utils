@@ -53,6 +53,7 @@ export * from "./jsonModifiers/deleteKeysFromJSON";
 export * from "./jsonModifiers/renameKey";
 export * from "./jsonModifiers/filterByKeys";
 export * from "./jsonModifiers/filterByTypes";
+export * from "./jsonModifiers/filterByJson";
 export * from "./getFunctionArgumentNames";
 export * from "./getDateParsed";
 export * from "./returnOnType";

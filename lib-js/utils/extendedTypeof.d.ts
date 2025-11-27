@@ -1,2 +1,13 @@
 import { extendedTypes } from "../types/extendedTypes";
 export declare function extendedTypeof(item: any): extendedTypes;
+export declare const extendedType_JSON: unique symbol;
+export declare const extendedType_Array: unique symbol;
+export declare const extendedType_Null: unique symbol;
+export declare const extendedType_Bigint: unique symbol;
+export declare const extendedType_Boolean: unique symbol;
+export declare const extendedType_Function: unique symbol;
+export declare const extendedType_Number: unique symbol;
+export declare const extendedType_String: unique symbol;
+export declare const extendedType_Symbol: unique symbol;
+export declare const extendedType_Undefined: unique symbol;
+export declare function extendedTypeofCustom(item: any): extendedTypes | Symbol;
