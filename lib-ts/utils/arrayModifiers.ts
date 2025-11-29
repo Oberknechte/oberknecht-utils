@@ -3,6 +3,7 @@ import { moveByIndex } from "./arrayModifiers/moveByIndex";
 import { arrayInsert, removeArrayDuplicates } from ".";
 import { push } from "./arrayModifiers/push";
 import { remove } from "./arrayModifiers/remove";
+import { filterByArray } from "./arrayModifiers/filterByArray";
 
 export class arrayModifiers {
   static arrayInsert = arrayInsert;
@@ -11,4 +12,5 @@ export class arrayModifiers {
   static removeDuplicates = removeArrayDuplicates;
   static push = push;
   static remove = remove;
+  static filterByArray = filterByArray;
 }

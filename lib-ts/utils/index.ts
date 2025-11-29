@@ -54,7 +54,7 @@ export * from "./jsonModifiers/deleteKeysFromJSON";
 export * from "./jsonModifiers/renameKey";
 export * from "./jsonModifiers/filterByKeys";
 export * from "./jsonModifiers/filterByTypes";
-export * from "./jsonModifiers/filterByJson";
+export * from "./jsonModifiers/filterByJSON";
 
 export * from "./getFunctionArgumentNames";
 export * from "./getDateParsed";
@@ -65,6 +65,7 @@ export * from "./arrayModifiers/removeArrayDuplicates";
 export * from "./createPyramid";
 export * from "./isEvan";
 export * from "./arrayModifiers/arrayInsert";
+export * from "./arrayModifiers/filterByArray";
 
 export * from "./stringModifiers";
 export * from "./arrayModifiers";

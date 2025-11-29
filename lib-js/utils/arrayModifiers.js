@@ -6,6 +6,7 @@ const moveByIndex_1 = require("./arrayModifiers/moveByIndex");
 const _1 = require(".");
 const push_1 = require("./arrayModifiers/push");
 const remove_1 = require("./arrayModifiers/remove");
+const filterByArray_1 = require("./arrayModifiers/filterByArray");
 class arrayModifiers {
     static arrayInsert = _1.arrayInsert;
     static splice = splice_1.splice;
@@ -13,5 +14,6 @@ class arrayModifiers {
     static removeDuplicates = _1.removeArrayDuplicates;
     static push = push_1.push;
     static remove = remove_1.remove;
+    static filterByArray = filterByArray_1.filterByArray;
 }
 exports.arrayModifiers = arrayModifiers;

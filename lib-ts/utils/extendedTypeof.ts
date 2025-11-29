@@ -31,7 +31,21 @@ export const extendedType_Symbol = Symbol("symbol");
 export const extendedType_Undefined = Symbol("undefined");
 export const extendedType_Object = Symbol("object");
 
-export function extendedTypeofCustom(item: any): extendedTypes | Symbol {
+export const extendedType_TypesArray = [
+  extendedType_JSON,
+  extendedType_Array,
+  extendedType_Null,
+  extendedType_Bigint,
+  extendedType_Boolean,
+  extendedType_Function,
+  extendedType_Number,
+  extendedType_String,
+  extendedType_Symbol,
+  extendedType_Undefined,
+  extendedType_Object,
+];
+
+export function extendedTypeofCustom(item: any): typeof extendedType_TypesArray[number] | undefined {
   let type = typeof item;
   switch (type) {
     case "object": {
