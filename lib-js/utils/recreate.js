@@ -12,6 +12,7 @@ function recreate(inp) {
             if (Array.isArray(inp))
                 return [...inp];
             try {
+                // @ts-ignore
                 if (inp instanceof HTMLElement)
                     return inp.cloneNode(true);
             }

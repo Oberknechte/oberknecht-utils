@@ -9,6 +9,7 @@ export function recreate(inp: any): any {
     case "object": {
       if (Array.isArray(inp)) return [...inp];
       try {
+        // @ts-ignore
         if (inp instanceof HTMLElement) return inp.cloneNode(true);
       } catch (nothin) {}
       if (regex.jsonreg().test(JSON.stringify(inp))) {
