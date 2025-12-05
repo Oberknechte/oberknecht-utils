@@ -1,7 +1,7 @@
 import {
   extendedType_String,
   extendedType_Symbol,
-  extendedType_TypesArray,
+  extendedType_Any,
   extendedTypeof,
   extendedTypeofCustom,
 } from "../extendedTypeof";
@@ -36,7 +36,8 @@ export function filterByJson(
       [extendedType_String, extendedType_Symbol].forEach((a) => {
         if (targetObj_[a] !== undefined) {
           Object.keys(obj_).forEach((key) => {
-            if (extendedTypeofCustom(key) !== a) return;
+            if (a !== extendedType_Any && extendedTypeofCustom(key) !== a)
+              return;
             return _filter(obj_[key], targetObj_[a], [...currentPath, key]);
           });
         }
@@ -44,14 +45,18 @@ export function filterByJson(
     } else {
       if (
         advancedRules?.strictFilteringByKeys === true &&
-        Object.keys(obj_).sort().join("\u0000") !== Object.keys(targetObj_).sort().join("\u0000")
+        Object.keys(obj_).sort().join("\u0000") !==
+          Object.keys(targetObj_).sort().join("\u0000")
       )
         return (strictMatchFailed = true);
 
       Object.keys(targetObj_).forEach((key, i) => {
         let key_: string = "";
         if (typeof key === "symbol") {
-          if (extendedTypeofCustom(obj_[key]) !== key) {
+          if (
+            key !== extendedType_Any &&
+            extendedTypeofCustom(obj_[key]) !== key
+          ) {
             return (strictMatchFailed = true);
           }
           key_ = Object.keys(obj_)[i];
@@ -88,7 +93,8 @@ export function filterByJson(
             addKeysToObject(r, [...currentPath, key], arrFilter);
         } else if (
           useExtendedTypes
-            ? targetObj_[key] === extendedTypeofCustom(obj_[key]) ||
+            ? targetObj_[key] === extendedType_Any ||
+              targetObj_[key] === extendedTypeofCustom(obj_[key]) ||
               targetObj_[key] === obj_[key]
             : // : extendedTypeof(targetObj_[key]) === extendedTypeof(obj_[key])
               targetObj_[key] === obj_[key]

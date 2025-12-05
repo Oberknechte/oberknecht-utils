@@ -11,5 +11,6 @@ export declare const extendedType_String: unique symbol;
 export declare const extendedType_Symbol: unique symbol;
 export declare const extendedType_Undefined: unique symbol;
 export declare const extendedType_Object: unique symbol;
+export declare const extendedType_Any: unique symbol;
 export declare const extendedType_TypesArray: symbol[];
 export declare function extendedTypeofCustom(item: any): typeof extendedType_TypesArray[number] | undefined;

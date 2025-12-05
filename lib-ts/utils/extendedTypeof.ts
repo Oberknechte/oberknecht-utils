@@ -30,6 +30,7 @@ export const extendedType_String = Symbol("string");
 export const extendedType_Symbol = Symbol("symbol");
 export const extendedType_Undefined = Symbol("undefined");
 export const extendedType_Object = Symbol("object");
+export const extendedType_Any = Symbol("any");
 
 export const extendedType_TypesArray = [
   extendedType_JSON,

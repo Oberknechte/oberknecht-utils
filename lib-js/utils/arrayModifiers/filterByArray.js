@@ -16,8 +16,9 @@ function filterByArray(array, targetArray, useExtendedTypes, advancedRules) {
         if (!item)
             return (strictMatchFailed = true);
         if (useExtendedTypes &&
-            extendedTypeof_1.extendedType_TypesArray.includes(targetItem)) {
-            if ((0, extendedTypeof_1.extendedTypeofCustom)(item) === targetItem) {
+            [...extendedTypeof_1.extendedType_TypesArray, extendedTypeof_1.extendedType_Any].includes(targetItem)) {
+            if (targetItem === extendedTypeof_1.extendedType_Any ||
+                (0, extendedTypeof_1.extendedTypeofCustom)(item) === targetItem) {
                 r.push(item);
             }
             else {
@@ -52,7 +53,9 @@ function filterByArray(array, targetArray, useExtendedTypes, advancedRules) {
                 }
                 default: {
                     if (useExtendedTypes
-                        ? targetItem === (0, extendedTypeof_1.extendedTypeofCustom)(item) || targetItem === item
+                        ? targetItem === extendedTypeof_1.extendedType_Any ||
+                            targetItem === (0, extendedTypeof_1.extendedTypeofCustom)(item) ||
+                            targetItem === item
                         : // : extendedTypeof(targetItem) === extendedTypeof(item)
                             targetItem === item) {
                         r.push(item);

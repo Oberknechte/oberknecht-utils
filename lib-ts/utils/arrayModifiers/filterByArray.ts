@@ -1,4 +1,5 @@
 import {
+  extendedType_Any,
   extendedType_TypesArray,
   extendedTypeof,
   extendedTypeofCustom,
@@ -35,9 +36,12 @@ export function filterByArray(
 
     if (
       useExtendedTypes &&
-      extendedType_TypesArray.includes(targetItem as symbol)
+      [...extendedType_TypesArray, extendedType_Any].includes(targetItem as symbol)
     ) {
-      if (extendedTypeofCustom(item) === targetItem) {
+      if (
+        targetItem === extendedType_Any ||
+        extendedTypeofCustom(item) === targetItem
+      ) {
         r.push(item);
       } else {
         strictMatchFailed = true;
@@ -72,7 +76,9 @@ export function filterByArray(
         default: {
           if (
             useExtendedTypes
-              ? targetItem === extendedTypeofCustom(item) || targetItem === item
+              ? targetItem === extendedType_Any ||
+                targetItem === extendedTypeofCustom(item) ||
+                targetItem === item
               : // : extendedTypeof(targetItem) === extendedTypeof(item)
                 targetItem === item
           ) {
