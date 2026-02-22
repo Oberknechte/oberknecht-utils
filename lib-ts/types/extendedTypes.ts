@@ -9,4 +9,5 @@ export type extendedTypes =
   | "symbol"
   | "undefined"
   | "object"
-  | "function";
+  | "function"
+  | "error";

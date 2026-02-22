@@ -8,6 +8,8 @@ function extendedTypeof(item) {
         case "object": {
             if (Array.isArray(item))
                 return "array";
+            if (item instanceof Error)
+                return "error";
             try {
                 // try catch due to error when trying to convert circular structure in object to json
                 // (Converting circular structure to JSON)

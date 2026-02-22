@@ -79,3 +79,4 @@ export * from "./matchStrings";
 export * from "../variables/regex";
 
 export * from "./ws/parseCode";
+export * from "./expressUtils/expressUtils";

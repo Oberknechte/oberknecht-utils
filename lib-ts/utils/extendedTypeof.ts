@@ -6,6 +6,7 @@ export function extendedTypeof(item: any): extendedTypes {
   switch (type) {
     case "object": {
       if (Array.isArray(item)) return "array";
+      if (item instanceof Error) return "error";
       try {
         // try catch due to error when trying to convert circular structure in object to json
         // (Converting circular structure to JSON)
@@ -46,7 +47,9 @@ export const extendedType_TypesArray = [
   extendedType_Object,
 ];
 
-export function extendedTypeofCustom(item: any): typeof extendedType_TypesArray[number] | undefined {
+export function extendedTypeofCustom(
+  item: any
+): typeof extendedType_TypesArray[number] | undefined {
   let type = typeof item;
   switch (type) {
     case "object": {
